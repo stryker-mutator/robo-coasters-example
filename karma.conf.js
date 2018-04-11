@@ -14,6 +14,10 @@ module.exports = function(config) {
       'src/**/*.js': ['coverage']
     },
     reporters: ['progress', 'coverage'],
+    coverageReporter: {
+      type : 'html',
+      dir : 'reports/coverage/'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
