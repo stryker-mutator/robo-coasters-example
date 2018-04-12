@@ -1,4 +1,4 @@
-{
+(() => {
     class RobobarComponent {
     }
 
@@ -6,4 +6,4 @@
         templateUrl: '/src/robobar-component/robobar-component.html',
         controller: RobobarComponent
     });
-}
+})();

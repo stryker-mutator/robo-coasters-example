@@ -1,4 +1,4 @@
-{
+(() => {
     class DrinkService {
         getDrinks() {
             return [
@@ -10,4 +10,4 @@
     }
 
     app.service('drinkService', DrinkService);
-}
+})();

@@ -1,4 +1,4 @@
-{
+(() => {
     app.config(($routeProvider) => {
         $routeProvider
             .when('/', {
@@ -14,4 +14,4 @@
                 redirectTo: '/'
             });
     });
-}
+})();

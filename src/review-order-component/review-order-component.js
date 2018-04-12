@@ -1,4 +1,4 @@
-{
+(() => {
     class ReviewOrderComponent {
         constructor(orderService, $location) {
             this.$location = $location;
@@ -37,4 +37,4 @@
         templateUrl: '/src/review-order-component/review-order-component.html',
         controllerAs: 'cpt'
     });
-}
+})();

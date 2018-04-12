@@ -1,5 +1,4 @@
-{
-
+(() => {
     class OrderService {
 
         constructor(localStorage) {
@@ -26,4 +25,4 @@
     OrderService.$inject = ['localStorage'];
 
     app.service('orderService', OrderService);
-}
+})();

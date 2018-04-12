@@ -1,5 +1,4 @@
-{
-
+(() => {
     class PlaceOrderComponent {
 
         constructor(orderService, drinkService, $location) {
@@ -39,4 +38,4 @@
         controller: PlaceOrderComponent,
         controllerAs: 'cpt'
     });
-}
+})();

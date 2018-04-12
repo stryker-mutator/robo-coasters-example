@@ -1,4 +1,4 @@
-{
+(() => {
 
     class SuccessComponent {
 
@@ -14,4 +14,4 @@
         controller: SuccessComponent,
         controllerAs: 'cpt'
     });
-}
+})();
