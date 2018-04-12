@@ -39,7 +39,7 @@
                 </div>
             </div>
             <button class="btn btn-default" ng-click="cpt.cancel()" type="button">Cancel</button>
-            <button class="btn btn-success" ng-disabled="!cpt.age" ng-click="cpt.submit()" type="submit">Order</button>
+            <button class="btn btn-success" ng-disabled="!cpt.age && cpt.ageCheck" ng-click="cpt.submit()" type="submit">Order</button>
         </form>
     </div>
 </div>
