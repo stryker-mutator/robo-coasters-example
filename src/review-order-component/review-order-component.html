@@ -5,6 +5,12 @@
 </div>
 <div class="row">
     <div class="col-12">
+        <div class="alert alert-danger" ng-if="cpt.error" role="alert">
+            <h4 class="alert-heading">Prrt!</h4>
+            <p>{{cpt.error}}</p>
+        </div>
+    </div>
+    <div class="col-12">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -26,7 +32,7 @@
             </tbody>
         </table>
         <form>
-            <div class="form-group row">
+            <div class="form-group row" ng-if="cpt.ageCheck">
                 <label for="ageInput" class="col-2 col-form-label" ng-model="cpt.age">Age</label>
                 <div class="col-10">
                     <input type="number" ng-model="cpt.age" class="form-control form-control-lg" id="ageInput">

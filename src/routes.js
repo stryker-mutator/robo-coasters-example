@@ -7,8 +7,8 @@
             .when('/review', {
                 template: '<robo-review-order></robo-review-order>'
             })
-            .when('/thanks', {
-                template: '<robo-order-placed></robo-order-placed>'
+            .when('/success', {
+                template: '<robo-success></robo-success>'
             })
             .otherwise({
                 redirectTo: '/'

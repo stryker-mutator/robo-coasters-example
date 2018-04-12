@@ -21,11 +21,6 @@
         clear() {
             this.currentOrder = null;
         }
-
-        submit() {
-            // TODO Send to server
-            this.clear();
-        }
     }
 
     OrderService.$inject = ['localStorage'];
