@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "start": "lite-server"
+    "start": "lite-server",
+    "stryker": "stryker run"
   },
   "keywords": [],
   "author": "",
