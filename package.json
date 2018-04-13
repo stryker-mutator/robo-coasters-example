@@ -28,6 +28,12 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.1.1",
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.3.0",
+    "stryker": "^0.22.1",
+    "stryker-api": "^0.16.0",
+    "stryker-html-reporter": "^0.13.2",
+    "stryker-jasmine": "^0.8.2",
+    "stryker-javascript-mutator": "^0.6.2",
+    "stryker-karma-runner": "^0.14.3"
   }
 }
