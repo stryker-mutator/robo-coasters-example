@@ -1,7 +1,7 @@
 {
   "name": "robobar",
   "version": "1.0.0",
-  "description": "",
+  "description": "An example project for Stryker",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
@@ -9,6 +9,10 @@
   },
   "keywords": [],
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stryker-mutator/robobar-example"
+  },
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.9",
