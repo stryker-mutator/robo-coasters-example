@@ -19,6 +19,7 @@
     "angular": "^1.6.9",
     "angular-route": "^1.6.9",
     "bootstrap": "^4.0.0",
+    "hoek": "^5.0.3",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.2"
   },
@@ -31,10 +32,10 @@
     "karma-jasmine": "^1.1.1",
     "lite-server": "^2.3.0",
     "stryker": "^0.22.1",
-    "stryker-api": "^0.16.0",
-    "stryker-html-reporter": "^0.13.2",
-    "stryker-jasmine": "^0.8.2",
-    "stryker-javascript-mutator": "^0.6.2",
-    "stryker-karma-runner": "^0.14.3"
+    "stryker-api": "^0.17.1",
+    "stryker-html-reporter": "^0.14.1",
+    "stryker-jasmine": "^0.8.5",
+    "stryker-javascript-mutator": "^0.7.1",
+    "stryker-karma-runner": "^0.15.1"
   }
 }
