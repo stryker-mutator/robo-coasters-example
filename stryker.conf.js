@@ -1,12 +1,14 @@
 module.exports = function(config) {
   config.set({
-    testRunner: "karma",
+    mutate: ["src/**/*.js"],
     mutator: "javascript",
     transpilers: [],
     reporter: ["html", "clear-text", "progress"],
+    testRunner: "karma",
     testFramework: "jasmine",
     coverageAnalysis: "perTest",
-    karmaConfigFile: "karma.conf.js",
-    mutate: ["src/**/*.js"]
+    karma: {
+      configFile: "karma.conf.js"
+    }
   });
 };
