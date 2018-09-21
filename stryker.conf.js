@@ -3,10 +3,11 @@ module.exports = function(config) {
     mutate: ["src/**/*.js"],
     mutator: "javascript",
     transpilers: [],
-    reporter: ["html", "clear-text", "progress"],
+    reporters: ["html", "clear-text", "progress"],
     testRunner: "karma",
     testFramework: "jasmine",
     coverageAnalysis: "perTest",
+    maxConcurrentTestRunners: 4,
     karma: {
       configFile: "karma.conf.js"
     }

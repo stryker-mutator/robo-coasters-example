@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
@@ -15,8 +15,11 @@ module.exports = function(config) {
     },
     reporters: ['progress', 'coverage'],
     coverageReporter: {
-      type : 'html',
-      dir : 'reports/coverage/'
+      type: 'html',
+      dir: 'reports/coverage/',
+      reporters: [
+        { type: 'html', subdir: '.' }
+      ]
     },
     port: 9876,
     colors: true,
