@@ -1,12 +1,18 @@
 # Welcome to the RoboBar
 
-*An introduction to mutation testing*
+> An introduction to mutation testing
 
-How code coverage of 100% actually means 50% is tested.
+_How code coverage of 100% could mean only 60% is tested._
 
-For the slides: [github.com/nicojs/testbash-mutation-testing-presentation](https://github.com/nicojs/testbash-mutation-testing-presentation)
+## TL;DR
 
-## Getting started
+No time to run the example yourself? Don't worry, we did it for you. Open it right in your browser:
+
+* [The RoboBar website](https://stryker-mutator.io/robobar-example/)
+* [Coverage report](https://stryker-mutator.io/robobar-example/reports/coverage/index.html)
+* [Mutation report](https://stryker-mutator.io/robobar-example/reports/mutation/html/index.html)
+
+## Try it yourself
 
 1. Install [git](https://git-scm.com)
 1. Install [nodejs](https://nodejs.org/)
