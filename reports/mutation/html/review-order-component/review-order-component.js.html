@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html><head><title>review-order-component\review-order-component.js
+ - Stryker report</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../strykerResources/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../strykerResources/highlightjs/styles/default.css">
+<link rel="stylesheet" href="../strykerResources/stryker.css"></head>
+<body><img class="stryker-image" alt="Stryker" src="../strykerResources/stryker-80x80.png">
+<div class="container-fluid"><div class="row"><div class="col-lg-12"><h1 class="display-4">review-order-component\review-order-component.js
+ 
+<small class="text-muted">- Stryker report</small></h1></div></div>
+<ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">All files</a></li>
+<li class="breadcrumb-item active">review-order-component\review-order-component.js</li></ol>
+<div class="row"><div class="col-lg-12"><div class="row"><div class="col-sm-11"><table class="table table-sm table-hover table-bordered table-no-top"><thead><tr><th style="width: 20%"><div><span>File / Directory</span></div></th>
+<th colspan="2"><div><span>Mutation score</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Killed</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Survived</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Timeout</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># No coverage</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Runtime errors</span></div></th>
+<th class="rotate text-center" style="width: 50px"><div><span># Transpile errors</span></div></th>
+<th class="rotate rotate-width-70 text-center" style="width: 70px"><div><span>Total detected</span></div></th>
+<th class="rotate rotate-width-70 text-center" style="width: 70px"><div><span>Total undetected</span></div></th>
+<th class="rotate rotate-width-70 text-center" style="width: 70px"><div><span>Total mutants</span></div></th></tr></thead>
+<tbody><tr><td>review-order-component\review-order-component.js</td>
+<td><div class="progress"><div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75.00" aria-valuemin="0" aria-valuemax="100" style="width: 75.00%;">75.00
+%</div></div></td>
+<th class="text-center text-warning" style="width: 10%">75.00</th>
+<td class="text-center">21</td>
+<td class="text-center">7</td>
+<td class="text-center">0</td>
+<td class="text-center">0</td>
+<td class="text-center">0</td>
+<td class="text-center">0</td>
+<th class="text-center">21</th>
+<th class="text-center">7</th>
+<th class="text-center">28</th></tr>
+</tbody></table></div></div>
+<div class="row"><div class="col-lg-7"><div class="row legend"><form class="col-md-12" novalidate="novalidate">
+<div class="form-check form-check-inline"><label class="form-check-label"><input class="form-check-input stryker-display" checked value="2" type="checkbox">
+Survived
+ 
+(7)</label></div>
+<div class="form-check form-check-inline"><label class="form-check-label"><input class="form-check-input stryker-display" value="1" type="checkbox">
+Killed
+ 
+(21)</label></div>
+
+
+
+<a href="#" class="stryker-collapse-expand-all">Expand all</a></form></div>
+<pre><code class="lang-javascript"><span class="bg-null">(() =&gt; </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="0"><span class="badge badge-success">0</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="0">{}</span><span class="stryker-original-code" data-mutant="0"><span class="bg-success-light">{
+    class ReviewOrderComponent {
+        constructor(orderService, $location) </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="1"><span class="badge badge-success">1</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="1">{}</span><span class="stryker-original-code" data-mutant="1"><span class="bg-success-light">{
+            this.$location = $location;
+            this.orderService = orderService;
+            if (</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="2"><span class="badge badge-success">2</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="2">true</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="3"><span class="badge badge-success">3</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="3">false</span><span class="stryker-original-code" data-mutant="2"><span class="stryker-original-code" data-mutant="3"><span class="bg-success-light">orderService.currentOrder</span></span></span><span class="bg-success-light">) </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="4"><span class="badge badge-success">4</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="4">{}</span><span class="stryker-original-code" data-mutant="4"><span class="bg-success-light">{
+                this.order = orderService.currentOrder;
+                this.numberOfDrinks = this.order.reduce((numberOfDrinks, drink) =&gt; </span><a href="#" class="stryker-mutant-button" tabindex="0" title="BinaryExpression" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="5"><span class="badge badge-danger">5</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="5">numberOfDrinks - drink.amount</span><span class="stryker-original-code" data-mutant="5"><span class="bg-danger-light">numberOfDrinks + drink.amount</span></span><span class="bg-success-light">, 0);
+                this.ageCheck = this.order.some(drink =&gt; drink.isAlcoholic);
+            }</span></span><span class="bg-success-light"> else </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="6"><span class="badge badge-success">6</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="6">{}</span><span class="stryker-original-code" data-mutant="6"><span class="bg-success-light">{
+                $location.path(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="7"><span class="badge badge-danger">7</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="7">&quot;&quot;</span><span class="stryker-original-code" data-mutant="7"><span class="bg-danger-light">&#039;/&#039;</span></span><span class="bg-success-light">);
+            }</span></span><span class="bg-success-light">
+        }</span></span><span class="bg-success-light">
+
+        submit() </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="8"><span class="badge badge-success">8</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="8">{}</span><span class="stryker-original-code" data-mutant="8"><span class="bg-success-light">{
+            if (</span><a href="#" class="stryker-mutant-button" tabindex="0" title="BinaryExpression" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="9"><span class="badge badge-success">9</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="9">!this.ageCheck &amp;&amp; this.isAllowedToBuyAlcohol({ age: this.age })</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="10"><span class="badge badge-success">10</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="10">true</span><a href="#" class="stryker-mutant-button" tabindex="0" title="IfStatement" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="11"><span class="badge badge-success">11</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="11">false</span><a href="#" class="stryker-mutant-button" tabindex="0" title="PrefixUnaryExpression" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="12"><span class="badge badge-success">12</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="12">this.ageCheck</span><span class="stryker-original-code" data-mutant="9"><span class="stryker-original-code" data-mutant="10"><span class="stryker-original-code" data-mutant="11"><span class="stryker-original-code" data-mutant="12"><span class="bg-success-light">!this.ageCheck</span></span><span class="bg-success-light"> || this.isAllowedToBuyAlcohol({ age: this.age })</span></span></span></span><span class="bg-success-light">) </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="13"><span class="badge badge-success">13</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="13">{}</span><span class="stryker-original-code" data-mutant="13"><span class="bg-success-light">{
+                this.error = null;
+                this.$location.path(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="14"><span class="badge badge-danger">14</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="14">&quot;&quot;</span><span class="stryker-original-code" data-mutant="14"><span class="bg-danger-light">&#039;/success&#039;</span></span><span class="bg-success-light">);
+            }</span></span><span class="bg-success-light"> else </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="15"><span class="badge badge-success">15</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="15">{}</span><span class="stryker-original-code" data-mutant="15"><span class="bg-success-light">{
+                this.error = </span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="16"><span class="badge badge-success">16</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="16">&quot;&quot;</span><span class="stryker-original-code" data-mutant="16"><span class="bg-success-light">&#039;Only adults can buy alcohol!&#039;</span></span><span class="bg-success-light">;
+            }</span></span><span class="bg-success-light">
+        }</span></span><span class="bg-success-light">
+
+        cancel() </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="17"><span class="badge badge-success">17</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="17">{}</span><span class="stryker-original-code" data-mutant="17"><span class="bg-success-light">{
+            this.orderService.clear();
+            this.$location.path(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="18"><span class="badge badge-danger">18</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="18">&quot;&quot;</span><span class="stryker-original-code" data-mutant="18"><span class="bg-danger-light">&#039;/&#039;</span></span><span class="bg-success-light">);
+        }</span></span><span class="bg-success-light">
+
+        isAllowedToBuyAlcohol(customer) </span><a href="#" class="stryker-mutant-button" tabindex="0" title="Block" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="19"><span class="badge badge-success">19</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="19">{}</span><span class="stryker-original-code" data-mutant="19"><span class="bg-success-light">{
+            return </span><a href="#" class="stryker-mutant-button" tabindex="0" title="BinaryExpression" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="20"><span class="badge badge-success">20</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="20">customer.age &lt;= 18</span><a href="#" class="stryker-mutant-button" tabindex="0" title="BinaryExpression" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="21"><span class="badge badge-danger">21</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="21">customer.age &gt;= 18</span><span class="stryker-original-code" data-mutant="20"><span class="stryker-original-code" data-mutant="21"><span class="bg-danger-light">customer.age &gt; 18</span></span></span><span class="bg-success-light">;
+        }</span></span><span class="bg-success-light">
+    }
+
+    ReviewOrderComponent.$inject = </span><a href="#" class="stryker-mutant-button" tabindex="0" title="ArrayLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="22"><span class="badge badge-success">22</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="22">[]</span><span class="stryker-original-code" data-mutant="22"><span class="bg-success-light">[</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="23"><span class="badge badge-success">23</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="23">&quot;&quot;</span><span class="stryker-original-code" data-mutant="23"><span class="bg-success-light">&#039;orderService&#039;</span></span><span class="bg-success-light">, </span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="24"><span class="badge badge-success">24</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="24">&quot;&quot;</span><span class="stryker-original-code" data-mutant="24"><span class="bg-success-light">&#039;$location&#039;</span></span><span class="bg-success-light">]</span></span><span class="bg-success-light">;
+    app.component(</span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Killed" data-mutant-status-annotation="success" data-mutant-status="1" data-mutant="25"><span class="badge badge-success">25</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="25">&quot;&quot;</span><span class="stryker-original-code" data-mutant="25"><span class="bg-success-light">&#039;roboReviewOrder&#039;</span></span><span class="bg-success-light">, {
+        controller: ReviewOrderComponent,
+        templateUrl: </span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="26"><span class="badge badge-danger">26</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="26">&quot;&quot;</span><span class="stryker-original-code" data-mutant="26"><span class="bg-danger-light">&#039;/src/review-order-component/review-order-component.html&#039;</span></span><span class="bg-success-light">,
+        controllerAs: </span><a href="#" class="stryker-mutant-button" tabindex="0" title="StringLiteral" data-content="status: Survived" data-mutant-status-annotation="danger" data-mutant-status="2" data-mutant="27"><span class="badge badge-danger">27</span></a><span class="badge badge-info stryker-mutant-replacement" hidden="hidden" data-mutant="27">&quot;&quot;</span><span class="stryker-original-code" data-mutant="27"><span class="bg-danger-light">&#039;cpt&#039;</span></span><span class="bg-success-light">
+    });
+}</span></span><span class="bg-null">)()</span>;</code></pre></div>
+<div class="col-lg-5"><table class="table table-sm table-hover mutant-table"><thead><tr><th>#</th>
+<th>Mutator</th>
+<th>State</th>
+<th>Location</th>
+<th>Original</th>
+<th>Replacement</th></tr></thead>
+<tbody><tr><th>0</th>
+<td>Block</td>
+<td>Killed</td>
+<td>0
+:
+7</td>
+<td><code>{
+  ...);
+}</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>1</th>
+<td>Block</td>
+<td>Killed</td>
+<td>2
+:
+45</td>
+<td><code>{
+  ...    }</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>2</th>
+<td>IfStatement</td>
+<td>Killed</td>
+<td>5
+:
+16</td>
+<td><code>.</code></td>
+<td><code></code></td></tr>
+<tr><th>3</th>
+<td>IfStatement</td>
+<td>Killed</td>
+<td>5
+:
+16</td>
+<td><code>.</code></td>
+<td><code></code></td></tr>
+<tr><th>4</th>
+<td>Block</td>
+<td>Killed</td>
+<td>5
+:
+43</td>
+<td><code>{
+  ...    }</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>5</th>
+<td>BinaryExpression</td>
+<td>Survived</td>
+<td>7
+:
+83</td>
+<td><code>+      .</code></td>
+<td><code>-      .</code></td></tr>
+<tr><th>6</th>
+<td>Block</td>
+<td>Killed</td>
+<td>9
+:
+19</td>
+<td><code>{
+  ...    }</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>7</th>
+<td>StringLiteral</td>
+<td>Survived</td>
+<td>10
+:
+31</td>
+<td><code>'/'</code></td>
+<td><code>""</code></td></tr>
+<tr><th>8</th>
+<td>Block</td>
+<td>Killed</td>
+<td>14
+:
+17</td>
+<td><code>{
+  ...    }</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>9</th>
+<td>BinaryExpression</td>
+<td>Killed</td>
+<td>15
+:
+16</td>
+<td><code>!    ...   })</code></td>
+<td><code>!    ...   })</code></td></tr>
+<tr><th>10</th>
+<td>IfStatement</td>
+<td>Killed</td>
+<td>15
+:
+16</td>
+<td><code>!    ...   })</code></td>
+<td><code></code></td></tr>
+<tr><th>11</th>
+<td>IfStatement</td>
+<td>Killed</td>
+<td>15
+:
+16</td>
+<td><code>!    ...   })</code></td>
+<td><code></code></td></tr>
+<tr><th>12</th>
+<td>PrefixUnaryExpression</td>
+<td>Killed</td>
+<td>15
+:
+16</td>
+<td><code>!    .</code></td>
+<td><code>.</code></td></tr>
+<tr><th>13</th>
+<td>Block</td>
+<td>Killed</td>
+<td>15
+:
+81</td>
+<td><code>{
+  ...    }</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>14</th>
+<td>StringLiteral</td>
+<td>Survived</td>
+<td>17
+:
+36</td>
+<td><code>'/       '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>15</th>
+<td>Block</td>
+<td>Killed</td>
+<td>18
+:
+19</td>
+<td><code>{
+  ...    }</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>16</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>19
+:
+29</td>
+<td><code>'    ...   !'</code></td>
+<td><code>""</code></td></tr>
+<tr><th>17</th>
+<td>Block</td>
+<td>Killed</td>
+<td>23
+:
+17</td>
+<td><code>{
+  ...    }</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>18</th>
+<td>StringLiteral</td>
+<td>Survived</td>
+<td>25
+:
+32</td>
+<td><code>'/'</code></td>
+<td><code>""</code></td></tr>
+<tr><th>19</th>
+<td>Block</td>
+<td>Killed</td>
+<td>28
+:
+40</td>
+<td><code>{
+  ...    }</code></td>
+<td><code>{}</code></td></tr>
+<tr><th>20</th>
+<td>BinaryExpression</td>
+<td>Killed</td>
+<td>29
+:
+19</td>
+<td><code>.    ></code></td>
+<td><code>.    <=</code></td></tr>
+<tr><th>21</th>
+<td>BinaryExpression</td>
+<td>Survived</td>
+<td>29
+:
+19</td>
+<td><code>.    ></code></td>
+<td><code>.    >=</code></td></tr>
+<tr><th>22</th>
+<td>ArrayLiteral</td>
+<td>Killed</td>
+<td>33
+:
+35</td>
+<td><code>['   ...   ']</code></td>
+<td><code>[]</code></td></tr>
+<tr><th>23</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>33
+:
+36</td>
+<td><code>'            '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>24</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>33
+:
+52</td>
+<td><code>'$        '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>25</th>
+<td>StringLiteral</td>
+<td>Killed</td>
+<td>34
+:
+18</td>
+<td><code>'    ...    '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>26</th>
+<td>StringLiteral</td>
+<td>Survived</td>
+<td>36
+:
+21</td>
+<td><code>'/   ...    '</code></td>
+<td><code>""</code></td></tr>
+<tr><th>27</th>
+<td>StringLiteral</td>
+<td>Survived</td>
+<td>37
+:
+22</td>
+<td><code>'   '</code></td>
+<td><code>""</code></td></tr></tbody></table></div></div></div></div>
+<footer>Generated with stryker-html-reporter generator. Visit the 
+<a href="https://stryker-mutator.io" target="_blank">Stryker website</a></footer></div>
+<script src="../strykerResources/popper.js/dist/umd/popper.min.js" defer="defer"></script>
+<script src="../strykerResources/jquery/dist/jquery.slim.min.js" defer="defer"></script>
+<script src="../strykerResources/bootstrap/js/bootstrap.min.js" defer="defer"></script>
+<script src="../strykerResources/stryker.js" defer="defer"></script></body></html>
