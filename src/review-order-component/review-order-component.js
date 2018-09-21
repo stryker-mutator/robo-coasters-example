@@ -34,7 +34,7 @@
     ReviewOrderComponent.$inject = ['orderService', '$location'];
     app.component('roboReviewOrder', {
         controller: ReviewOrderComponent,
-        templateUrl: '/src/review-order-component/review-order-component.html',
+        templateUrl: 'src/review-order-component/review-order-component.html',
         controllerAs: 'cpt'
     });
 })();

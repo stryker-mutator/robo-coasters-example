@@ -10,7 +10,7 @@
     SuccessComponent.$inject = ['orderService'];
 
     app.component('roboSuccess', {
-        templateUrl: '/src/success-component/success-component.html',
+        templateUrl: 'src/success-component/success-component.html',
         controller: SuccessComponent,
         controllerAs: 'cpt'
     });

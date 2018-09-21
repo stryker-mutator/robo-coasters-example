@@ -34,7 +34,7 @@
     PlaceOrderComponent.$inject = ['orderService', 'drinkService', '$location'];
 
     app.component('roboPlaceOrder', {
-        templateUrl: '/src/place-order-component/place-order-component.html',
+        templateUrl: 'src/place-order-component/place-order-component.html',
         controller: PlaceOrderComponent,
         controllerAs: 'cpt'
     });
