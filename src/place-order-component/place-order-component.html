@@ -1,0 +1,46 @@
+<div class="row">
+    <h2 class="col-12 display-4">Place order - prrrt</h2>
+</div>
+<div class="row">
+    <table class="table col-12">
+        <thead>
+            <tr>
+                <th>Drink</th>
+                <th colspan="2">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="drink in cpt.drinks">
+                <td>{{drink.name}}</td>
+                <td>{{drink.price | currency:'€'}}</td>
+                <td>
+                    <div class="row">
+                        <div class="col-5 input-group">
+                            <div class="input-group-prepend">
+                                <button ng-click="cpt.decrement(drink)" class="btn btn-dark">-</button>
+                            </div>
+                            <input class="form-control" type="number" ng-model="drink.amount" readonly>
+                            <div class="input-group-append">
+                                <button ng-click="cpt.increment(drink)" class="btn btn-dark">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <th>{{cpt.totalPrice()| currency:'€' }}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-success" ng-disabled="!cpt.submitEnabled()" ng-click="cpt.submit()" type="submit">Submit order</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        &nbsp;
+    </div>
+</div>

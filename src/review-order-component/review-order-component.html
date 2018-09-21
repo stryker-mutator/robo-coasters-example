@@ -1,0 +1,45 @@
+<div class="row">
+    <h2 class="col-12 display-4">Order review
+        <small class="text-muted">- {{cpt.numberOfDrinks}} drink{{cpt.numberOfDrinks > 1? 's' : ''}}</small>
+    </h2>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="alert alert-danger" ng-if="cpt.error" role="alert">
+            <h4 class="alert-heading">Prrt!</h4>
+            <p>{{cpt.error}}</p>
+        </div>
+    </div>
+    <div class="col-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Drink</th>
+                    <th>#</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="drink in cpt.order">
+                    <td>
+                        <em>{{drink.name}}</em>
+                    </td>
+                    <td>{{drink.amount}}</td>
+                    <td>{{drink.price | currency:'€'}}</td>
+                    <td>{{drink.amount * drink.price | currency:'€'}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <form>
+            <div class="form-group row" ng-if="cpt.ageCheck">
+                <label for="ageInput" class="col-2 col-form-label" ng-model="cpt.age">Age</label>
+                <div class="col-10">
+                    <input type="number" ng-model="cpt.age" class="form-control form-control-lg" id="ageInput">
+                </div>
+            </div>
+            <button class="btn btn-default" ng-click="cpt.cancel()" type="button">Cancel</button>
+            <button class="btn btn-success" ng-disabled="!cpt.age && cpt.ageCheck" ng-click="cpt.submit()" type="submit">Order</button>
+        </form>
+    </div>
+</div>
