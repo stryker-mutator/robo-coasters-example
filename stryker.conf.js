@@ -9,7 +9,10 @@ module.exports = function(config) {
     coverageAnalysis: "perTest",
     maxConcurrentTestRunners: 4,
     karma: {
-      configFile: "karma.conf.js"
+      configFile: "karma.conf.js",
+      config: {
+        browsers: ["ChromeHeadless"]
+      }
     }
   });
 };
