@@ -31,11 +31,10 @@
     "karma-coverage": "^1.1.2",
     "karma-jasmine": "^1.1.2",
     "lite-server": "^2.4.0",
-    "stryker": "^0.35.1",
-    "stryker-api": "^0.24.1",
-    "stryker-html-reporter": "^0.18.1",
-    "stryker-jasmine": "^0.12.1",
-    "stryker-javascript-mutator": "^0.14.1",
-    "stryker-karma-runner": "^0.24.1"
+    "@stryker-mutator/core": "^1.0.0",
+    "@stryker-mutator/html-reporter": "^1.0.0",
+    "@stryker-mutator/jasmine-framework": "^1.0.0",
+    "@stryker-mutator/javascript-mutator": "^1.0.0",
+    "@stryker-mutator/karma-runner": "^1.0.0"
   }
 }
