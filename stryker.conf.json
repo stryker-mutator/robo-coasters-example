@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stryker-mutator/stryker/master/packages/api/schema/stryker-core.json",
+  "mutate": [
+    "src/**/*.js"
+  ],
+  "mutator": "javascript",
+  "transpilers": [],
+  "testRunner": "karma",
+  "testFramework": "jasmine",
+  "coverageAnalysis": "perTest",
+  "maxConcurrentTestRunners": 4,
+  "karma": {
+    "configFile": "karma.conf.js",
+    "config": {
+      "browsers": [
+        "ChromeHeadless"
+      ]
+    }
+  }
+}
