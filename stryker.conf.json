@@ -7,6 +7,12 @@
   "transpilers": [],
   "testRunner": "karma",
   "testFramework": "jasmine",
+  "reporters": [
+    "clear-text",
+    "progress",
+    "html",
+    "dashboard"
+  ],
   "coverageAnalysis": "perTest",
   "maxConcurrentTestRunners": 4,
   "karma": {
