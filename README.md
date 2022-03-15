@@ -75,3 +75,36 @@ After the plugins are installed, try it out:
 stryker run
 ```
 
+## Try to install stryker yourself.
+
+If you want to install stryker yourself, step back in history using git:
+
+```
+git checkout pre-stryker
+npm install
+```
+
+After that you can install stryker for yourself:
+
+```js
+npm i -g stryker-cli
+stryker init
+```
+
+Choose the following options in the questionnaire:
+
+* Install stryker?: `Yes`
+* Are you using one of these frameworks? Then select a preset configuration. `None/other`
+* Test runner: `Karma`
+* Build command? `none`
+* Reporters: `html, clear text, progress`
+* Package manager: `npm`
+* File type: `JSON`
+
+After the plugins are installed, try it out:
+
+```
+stryker run
+```
+
+
