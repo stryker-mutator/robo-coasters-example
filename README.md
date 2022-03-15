@@ -93,8 +93,8 @@ stryker init
 
 Choose the following options in the questionnaire:
 
-* Install stryker?: `Yes`
-* Are you using one of these frameworks? Then select a preset configuration. `None/other`
+* Install Stryker locally?: `npm`
+* Are you using one of these frameworks? `None/other`
 * Test runner: `Karma`
 * Build command? `none`
 * Reporters: `html, clear text, progress`
