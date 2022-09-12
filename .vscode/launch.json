@@ -1,0 +1,23 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "🃏 Jest test current file",
+      "skipFiles": ["<node_internals>/**"],
+      "args": [
+        "--runInBand",
+        "--coverage=false",
+        "--findRelatedTests",
+        "${file}"
+      ],
+      "runtimeArgs": ["--experimental-vm-modules"],
+      "program": "node_modules/jest/bin/jest.js",
+      "outputCapture": "std"
+    }
+  ]
+}
