@@ -1,10 +1,7 @@
 /**
- * @param {number} amount
+ * @param {number | undefined} amount
  * @returns {string}
  */
 export function currency(amount) {
-  return amount.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'EUR',
-  });
+  return `€ ${amount?.toFixed(2)}`;
 }

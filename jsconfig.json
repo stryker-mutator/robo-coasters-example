@@ -11,5 +11,6 @@
     "checkJs": true,
     "moduleResolution": "node",
     "maxNodeModuleJsDepth": 0
-  }
+  },
+  "include": ["src", "test"]
 }

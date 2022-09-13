@@ -33,7 +33,7 @@ describe(ReviewOrderComponent.name, () => {
     order.push(createOrderItem());
     createSut();
     /** @type {HTMLButtonElement} */
-    const cancelBtn = sut.querySelector('.robo-cancel');
+    const cancelBtn = sut.querySelector('.roboCancel');
     cancelBtn.click();
     expect(routerNextStub).toHaveBeenCalled();
   });
@@ -78,7 +78,7 @@ describe(ReviewOrderComponent.name, () => {
       const inputEvent = new InputEvent('input', { bubbles: true });
       ageInput.valueAsNumber = 3;
       /** @type {HTMLButtonElement} */
-      const submitBtn = sut.querySelector('.robo-submit');
+      const submitBtn = sut.querySelector('.roboSubmit');
 
       // Act
       ageInput.dispatchEvent(inputEvent);
@@ -96,7 +96,7 @@ describe(ReviewOrderComponent.name, () => {
   }
   function submitForm() {
     /** @type {HTMLButtonElement} */
-    const submitBtn = sut.querySelector('.robo-submit');
+    const submitBtn = sut.querySelector('.roboSubmit');
     submitBtn.click();
   }
 });

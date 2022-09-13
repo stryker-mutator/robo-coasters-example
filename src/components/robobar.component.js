@@ -1,4 +1,5 @@
 import { router } from '../router.js';
+import { cloneTemplate, RoboComponent } from './robo.component.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
@@ -8,20 +9,20 @@ template.innerHTML = `
             <small class="text-muted">Futuristic drinks</small>
         </h1>
     </div>
-    <div id="view"></div>
+    <div id="view"><robo-place-order></robo-place-order></div>
     <div class="alert alert-default" role="alert">
         <h4 class="alert-heading">Prrt!</h4>
-        Curious about the <a target="_blank" href="reports/coverage/lcov-report/index.html">code coverage report</a> or the <a target="_blank" href="reports/mutation/html/index.html">mutation testing report</a>? 
+        Curious about the <a target="_blank" href="reports/coverage/lcov-report/index.html">code coverage report</a> or the <a target="_blank" href="reports/mutation/mutation.html">mutation testing report</a>? 
     </div>
 </div>
 `;
-export class RobobarComponent extends HTMLElement {
+export class RobobarComponent extends RoboComponent {
   /** @type {string | undefined} */
   currentlyViewedRoute;
 
   connectedCallback() {
-    this.appendChild(template.content.cloneNode(true));
-    this.view = this.querySelector('#view');
+    this.appendChild(cloneTemplate(template));
+    this.view = this.by.id.view;
     this.routerSubscription = router.onNext((route) => {
       this.route = route;
       this.render();

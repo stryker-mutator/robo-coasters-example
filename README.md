@@ -36,7 +36,7 @@ The RoboBar is a small application to demo mutation testing. It actually has a f
    ```
    npm test
    ```
-1. Review the 100% code coverage score. Open up the code coverage report located in the `reports/coverage` directory.
+1. Review the 100% code coverage score. Open up the code coverage report located in the `reports/coverage/lcov-report` directory.
 1. Run mutation testing with [Stryker](https://stryker-mutator.io)
    ```
    npm run stryker
@@ -49,30 +49,52 @@ The RoboBar is a small application to demo mutation testing. It actually has a f
 If you want to install stryker yourself, step back in history using git:
 
 ```
-git checkout e92b8d4
+git checkout pre-stryker
 npm install
 ```
 
 After that you can install stryker for yourself:
 
 ```js
-npm i -g stryker-cli
-stryker init
+npm i -D @stryker-mutator/core
+npx stryker init
 ```
 
 Choose the following options in the questionnaire:
 
-- Install stryker?: `Yes`
-- Test runner: `Karma`
-- Test framework: `Jasmine`
-- Language: `javascript`
-- Transformations: _none_
-- Reporters: `html, clear text, progress`
+- **Are you using one of these frameworks?** `None/other`
+- **Which test runner do you want to use?** `jest`
+- **Reporters**: `html`, `clear-text`, `progress`
+- **Which package manager do you want to use?**: `npm`
+- **What file type do you want for your config file?**: `json`
 
-After the plugins are installed, try it out:
+After the plugins are installed, open the `stryker.conf.json` file and make the following change:
+
+```diff
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "This config was generated using 'stryker init'. Please take a look at: https://stryker-mutator.io/docs/stryker-js/configuration/ for more information",
+  "packageManager": "npm",
+  "reporters": [
+    "html",
+    "clear-text",
+    "progress",
+    "dashboard"
+  ],
+  "testRunner": "jest",
+- "coverageAnalysis": "perTest"
++ "coverageAnalysis": "perTest",
++ "testRunnerNodeArgs": ["--experimental-vm-modules"],
++ "jest": {
++   "configFile": "jest.config.cjs"
++ }
+}
+```
+
+(this is needed because we're using [jest with ECMAScript modules](https://jestjs.io/docs/ecmascript-modules))
 
 ```
-stryker run
+npx stryker run
 ```
 
 ## Try to install stryker yourself.

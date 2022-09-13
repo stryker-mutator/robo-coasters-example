@@ -6,8 +6,9 @@ import {
   templateOrderRow,
 } from './place-order.template.js';
 import { currency } from '../pipes/currency.pipe.js';
+import { cloneTemplate, RoboComponent, Selector } from './robo.component.js';
 
-export class PlaceOrderComponent extends HTMLElement {
+export class PlaceOrderComponent extends RoboComponent {
   /** @type {OrderItem[]} */
   orderItems = [];
 
@@ -42,53 +43,41 @@ export class PlaceOrderComponent extends HTMLElement {
   }
 
   connectedCallback() {
-    this.appendChild(templatePlaceOrder.content.cloneNode(true));
+    this.appendChild(cloneTemplate(templatePlaceOrder));
     drinkService.getDrinks().then((drinks) => {
       this.orderItems = drinks.map((drink) => ({ ...drink, amount: 0 }));
       this.#render();
     });
-    /** @type {HTMLTableSectionElement} */
-    this.orderTableBody = this.querySelector('.robo-order-table tbody');
-    /** @type {HTMLButtonElement} */
-    this.btnSubmit = this.querySelector('.robo-submit');
-    this.btnSubmit.addEventListener('click', () => this.submit());
-    /** @type {HTMLTableElement} */
-    this.totalPriceElement = this.querySelector('.robo-total-price');
-
+    this.by.class.roboSubmit.addEventListener('click', () => this.submit());
     this.#render();
   }
 
   #render() {
-    while (this.orderTableBody.firstChild) {
-      this.orderTableBody.removeChild(this.orderTableBody.firstChild);
-    }
-    this.orderItems.forEach((orderItem) => this.#renderOrderRow(orderItem));
-    this.totalPriceElement.innerText = currency(this.totalPrice);
-    this.btnSubmit.disabled = !this.submitEnabled;
+    this.by.class.roboOrderTableBody.replaceChildren(
+      ...this.orderItems.map((orderItem) => this.#renderOrderRow(orderItem))
+    );
+    this.by.class.roboTotalPrice.innerText = currency(this.totalPrice);
+    /** @type {HTMLInputElement} */ (this.by.class.roboSubmit).disabled =
+      !this.submitEnabled;
   }
 
   /**
    * @param {OrderItem} orderItem
    */
   #renderOrderRow(orderItem) {
-    /** @type {HTMLTableRowElement} */
-    const row = /** @type {any} */ (templateOrderRow.content.cloneNode(true));
-    /** @type {HTMLTableCellElement} */
-    const nameEl = row.querySelector('.robo-name');
-    /** @type {HTMLTableCellElement} */
-    const priceEl = row.querySelector('.robo-price');
-    nameEl.innerText = orderItem.name;
-    priceEl.innerText = currency(orderItem.price);
-    /** @type {HTMLInputElement} */
-    const amountInput = row.querySelector('.robo-amount');
-    amountInput.value = orderItem.amount.toString();
-    row
-      .querySelector('.robo-increment')
-      .addEventListener('click', () => this.increment(orderItem));
-    row
-      .querySelector('.robo-decrement')
-      .addEventListener('click', () => this.decrement(orderItem));
-    this.orderTableBody.appendChild(row);
+    const row = cloneTemplate(templateOrderRow);
+    const selector = new Selector(row);
+    selector.class.roboName.innerText = orderItem.name;
+    selector.class.roboPrice.innerText = currency(orderItem.price);
+    /** @type {HTMLInputElement}*/ (selector.class.roboAmount).value =
+      orderItem.amount.toString();
+    selector.class.roboIncrement.addEventListener('click', () =>
+      this.increment(orderItem)
+    );
+    selector.class.roboDecrement.addEventListener('click', () =>
+      this.decrement(orderItem)
+    );
+    return row;
   }
 }
 

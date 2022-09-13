@@ -1,34 +1,18 @@
 import { currency } from '../pipes/currency.pipe.js';
-import { drinks } from '../pipes/drinks.pipe.js';
+import { drinksSummary } from '../pipes/drinks-summary.pipe.js';
 import {
   reviewOrderTemplate,
   reviewRowTemplate,
 } from './review-order.template.js';
 import { router } from '../router.js';
 import { orderService } from '../services/order.service.js';
+import { cloneTemplate, RoboComponent, Selector } from './robo.component.js';
 
-export class ReviewOrderComponent extends HTMLElement {
+export class ReviewOrderComponent extends RoboComponent {
   #age = 0;
   #order;
   /** @type {string | undefined}  */
   error;
-
-  /** @type {HTMLDivElement} */
-  #alertEl;
-  /** @type {HTMLParagraphElement} */
-  #alertTextEl;
-  /** @type {HTMLDivElement} */
-  #ageCheckEl;
-  /** @type {HTMLInputElement} */
-  #ageCheckInputEl;
-  /** @type {HTMLSpanElement} */
-  #totalAmountEl;
-  /** @type {HTMLButtonElement} */
-  #submitButton;
-  /** @type {HTMLFormElement} */
-  #submitForm;
-  /** @type {HTMLElement} */
-  #reviewTableBodyEl;
 
   get age() {
     return this.#age;
@@ -69,32 +53,18 @@ export class ReviewOrderComponent extends HTMLElement {
     return this.#order.some((drink) => drink.isAlcoholic);
   }
 
-  get numberOfDrinks() {
-    return this.#order.reduce(
-      (numberOfDrinks, drink) => numberOfDrinks + drink.amount,
-      0
-    );
-  }
-
   connectedCallback() {
     if (orderService.currentOrder.length) {
-      this.appendChild(reviewOrderTemplate.content.cloneNode(true));
-      this.#alertEl = this.querySelector('.robo-alert');
-      this.#alertTextEl = this.querySelector('.robo-alert-text');
-      this.#ageCheckEl = this.querySelector('.robo-age-check');
-      this.#ageCheckInputEl = this.querySelector('#ageInput');
-      this.#ageCheckInputEl.addEventListener('input', () => {
-        this.age = this.#ageCheckInputEl.valueAsNumber;
+      this.appendChild(cloneTemplate(reviewOrderTemplate));
+      const ageInput = /** @type {HTMLInputElement} */ (this.by.id.ageInput);
+      ageInput.addEventListener('input', () => {
+        this.age = ageInput.valueAsNumber;
       });
       /** @type {HTMLSpanElement} */
-      this.#totalAmountEl = this.querySelector('.robo-total-amount');
-      this.#submitButton = this.querySelector('.robo-submit');
-      this.#submitForm = this.querySelector('.robo-submit-form');
-      this.#submitForm.addEventListener('submit', (ev) => this.submit(ev));
-      this.querySelector('.robo-cancel').addEventListener('click', () =>
-        this.cancel()
+      this.by.class.roboSubmitForm.addEventListener('submit', (ev) =>
+        this.submit(ev)
       );
-      this.#reviewTableBodyEl = this.querySelector('.robo-review-table tbody');
+      this.by.class.roboCancel.addEventListener('click', () => this.cancel());
       this.#render();
     } else {
       router.next('/');
@@ -102,36 +72,30 @@ export class ReviewOrderComponent extends HTMLElement {
   }
 
   #render() {
-    this.#totalAmountEl.innerText = drinks(this.numberOfDrinks);
-    this.#alertEl.hidden = !this.error;
-    this.#alertTextEl.innerText = this.error;
-    this.#ageCheckEl.hidden = !this.ageCheck;
-    this.#submitButton.disabled = this.ageCheck && !this.age;
+    this.by.class.roboTotalAmount.innerText = drinksSummary(this.#order);
+    this.by.class.roboAlert.hidden = !this.error;
+    this.by.class.roboAlertText.innerText = this.error;
+    this.by.class.roboAgeCheck.hidden = !this.ageCheck;
+    /** @type {HTMLButtonElement} */ (this.by.class.roboSubmit).disabled =
+      this.ageCheck && !this.age;
     this.#renderReviewTableBody();
   }
 
   #renderReviewTableBody() {
-    while (this.#reviewTableBodyEl.firstChild) {
-      this.#reviewTableBodyEl.removeChild(this.#reviewTableBodyEl.firstChild);
-    }
-    this.#order.forEach((orderItem) => {
-      const row = /** @type {HTMLTableRowElement} */ (
-        reviewRowTemplate.content.cloneNode(true)
-      );
+    this.by.class.roboReviewTableBody.replaceChildren(
+      ...this.#order.map((orderItem) => {
+        const row = cloneTemplate(reviewRowTemplate);
+        const selector = new Selector(row);
 
-      /** @param {string} selector @param {string} text */
-      const setText = (selector, text) => {
-        /** @type {HTMLElement} */
-        const el = row.querySelector(selector);
-        el.innerText = text;
-      };
-
-      setText('.robo-name', orderItem.name);
-      setText('.robo-amount', orderItem.amount.toString());
-      setText('.robo-price-per-drink', currency(orderItem.price));
-      setText('.robo-price', currency(orderItem.price * orderItem.amount));
-      this.#reviewTableBodyEl.appendChild(row);
-    });
+        selector.class.roboName.innerText = orderItem.name;
+        selector.class.roboAmount.innerText = orderItem.amount.toString();
+        selector.class.roboPricePerDrink.innerText = currency(orderItem.price);
+        selector.class.roboPrice.innerText = currency(
+          orderItem.price * orderItem.amount
+        );
+        return row;
+      })
+    );
   }
 }
 

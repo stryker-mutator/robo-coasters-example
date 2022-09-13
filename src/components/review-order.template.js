@@ -3,19 +3,19 @@ reviewOrderTemplate.innerHTML = `<div class="row">
     <h2 class="col-12 display-4">
       Order review
       <small class="text-muted"
-        >- <span class="robo-total-amount"></span>
+        >- <span class="roboTotalAmount"></span>
       ></small>
     </h2>
   </div>
   <div class="row">
     <div class="col-12">
-      <div class="robo-alert alert alert-danger" role="alert">
+      <div class="roboAlert alert alert-danger" role="alert">
         <h4 class="alert-heading">Prrt!</h4>
-        <p class="robo-alert-text"></p>
+        <p class="roboAlertText"></p>
       </div>
     </div>
     <div class="col-12">
-      <table class="robo-review-table table table-striped">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th>Drink</th>
@@ -24,10 +24,10 @@ reviewOrderTemplate.innerHTML = `<div class="row">
             <th>Total</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody class="roboReviewTableBody"></tbody>
       </table>
-      <form class="robo-submit-form ">
-        <div class="robo-age-check form-group row">
+      <form class="roboSubmitForm ">
+        <div class="roboAgeCheck form-group row">
           <label for="ageInput" class="col-2 col-form-label">Age</label
           >
           <div class="col-2">
@@ -38,11 +38,11 @@ reviewOrderTemplate.innerHTML = `<div class="row">
             />
           </div>
         </div>
-        <button class="robo-cancel btn btn-default" type="button">
+        <button class="roboCancel btn btn-default" type="button">
           Cancel
         </button>
         <button
-          class="robo-submit btn btn-success"
+          class="roboSubmit btn btn-success"
           type="submit"
         >
           Order
@@ -54,9 +54,9 @@ reviewOrderTemplate.innerHTML = `<div class="row">
 export const reviewRowTemplate = document.createElement('template');
 reviewRowTemplate.innerHTML = `<tr>
   <td>
-    <em class="robo-name"></em>
+    <em class="roboName"></em>
   </td>
-  <td class="robo-amount"></td>
-  <td class="robo-price-per-drink"></td>
-  <td class="robo-price"></td>
+  <td class="roboAmount"></td>
+  <td class="roboPricePerDrink"></td>
+  <td class="roboPrice"></td>
 </tr>`;

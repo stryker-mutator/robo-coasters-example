@@ -38,9 +38,4 @@ describe(RobobarComponent.name, () => {
     routerOnNextStub.mock.lastCall[0]('/success');
     expect(sut.querySelector('robo-success')).toBeTruthy();
   });
-
-  it('should unsubscribe to route changes on disconnect', () => {
-    sut.remove();
-    expect(routerUnsubscribeStub).toBeCalled();
-  });
 });

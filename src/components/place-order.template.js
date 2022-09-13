@@ -4,19 +4,19 @@ templatePlaceOrder.innerHTML = `
     <h2 class="col-12 display-4">Place order - prrrt</h2>
   </div>
   <div class="row">
-    <table class="robo-order-table table col-12">
+    <table class="table col-12">
       <thead>
         <tr>
           <th>Drink</th>
           <th colspan="2">Price</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="roboOrderTableBody">
       </tbody>
       <tfoot>
         <tr>
           <th>Total</th>
-          <th class="robo-total-price"></th>
+          <th class="roboTotalPrice"></th>
         </tr>
       </tfoot>
     </table>
@@ -24,7 +24,7 @@ templatePlaceOrder.innerHTML = `
   <div class="row">
     <div class="col-12">
       <button
-        class="btn btn-success robo-submit"
+        class="btn btn-success roboSubmit"
         type="submit"
       >
         Submit order
@@ -38,18 +38,18 @@ templatePlaceOrder.innerHTML = `
 
 export const templateOrderRow = document.createElement('template');
 templateOrderRow.innerHTML = `<tr>
-  <td class="robo-name"></td>
-  <td class="robo-price"></td>
+  <td class="roboName"></td>
+  <td class="roboPrice"></td>
   <td>
     <div class="row">
       <div class="col-5">
         <div class="input-group">
           <div class="input-group-prepend">
-            <button class="btn btn-dark robo-decrement">-</button>
+            <button class="btn btn-dark roboDecrement">-</button>
           </div>
-          <input class="form-control robo-amount" type="number" readonly />
+          <input class="form-control roboAmount" type="number" readonly />
           <div class="input-group-append">
-            <button class="btn btn-dark robo-increment">+</button>
+            <button class="btn btn-dark roboIncrement">+</button>
           </div>
         </div>
       </div>

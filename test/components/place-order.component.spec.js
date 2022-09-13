@@ -69,12 +69,6 @@ describe(PlaceOrderComponent.name, () => {
       expect(roboBeer.amount).toEqual(1);
     });
 
-    it('should decrement the drink amount on decrement', () => {
-      const roboBeer = createOrderItem({ name: 'Robo Beer', amount: 5 });
-      sut.decrement(roboBeer);
-      expect(roboBeer.amount).toEqual(4);
-    });
-
     it('should go below 0 on decrement', () => {
       const roboBeer = createOrderItem({ name: 'Robo Beer', amount: 0 });
       sut.decrement(roboBeer);
@@ -84,7 +78,7 @@ describe(PlaceOrderComponent.name, () => {
     it('should bind increment button', () => {
       /** @type {HTMLButtonElement} */
       const incrementButton = tableBody.querySelector(
-        'tr:nth-child(1) .robo-increment'
+        'tr:nth-child(1) .roboIncrement'
       );
       incrementButton.click();
       expect(sut.orderItems[0].amount).toBe(1);
@@ -94,7 +88,7 @@ describe(PlaceOrderComponent.name, () => {
       orderItem.amount = 3;
       /** @type {HTMLButtonElement} */
       const decrementButton = tableBody.querySelector(
-        'tr:nth-child(1) .robo-decrement'
+        'tr:nth-child(1) .roboDecrement'
       );
       decrementButton.click();
       expect(orderItem.amount).toBe(2);
@@ -104,11 +98,11 @@ describe(PlaceOrderComponent.name, () => {
       // Arrange
       /** @type {HTMLButtonElement} */
       const incrementButton = tableBody.querySelector(
-        'tr:nth-child(1) .robo-increment'
+        'tr:nth-child(1) .roboIncrement'
       );
       incrementButton.click();
       /** @type {HTMLButtonElement} */
-      const btnSubmit = sut.querySelector('.robo-submit');
+      const btnSubmit = sut.querySelector('.roboSubmit');
 
       // Act
       btnSubmit.click();
