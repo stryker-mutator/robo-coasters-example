@@ -1,22 +1,21 @@
-<html ng-app="robobar">
-<head>
-    <title>Robobar - Futuristic drinks</title>
-    <link rel="stylesheet" href="content/darkly/bootstrap.css">
-    <link rel="stylesheet" href="content/robobar.css">
-    <base href="https://stryker-mutator.io/robobar-example/">
-</head>
-<body>
-    <robo-robobar></robo-robobar>
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
-    <script src="src/app.module.js"></script>
-    <script src="src/routes.js"></script>
-    <script src="src/services/OrderService.js"></script>
-    <script src="src/services/DrinkService.js"></script>
-    <script src="src/robobar-component/robobar-component.js"></script>
-    <script src="src/place-order-component/place-order-component.js"></script>
-    <script src="src/review-order-component/review-order-component.js"></script>
-    <script src="src/success-component/success-component.js"></script>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RoboBar - Futuristic drinks</title>
+    <link rel="stylesheet" href="css/darkly-bootstrap.css" />
+    <link rel="stylesheet" href="css/robobar.css" />
+  </head>
+  <body>
+    <robo-bar></robo-bar>
+    <script
+      type="module"
+      src="src/components/place-order.component.js"
+    ></script>
+    <script
+      type="module"
+      src="src/components/review-order.component.js"
+    ></script>
+    <script type="module" src="src/components/success.component.js"></script>
+    <script type="module" src="src/components/robobar.component.js"></script>
+  </body>
 </html>
-
