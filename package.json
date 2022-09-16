@@ -9,7 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "all": "npm run lint && npm test",
+    "all": "npm run lint && npm test && npm run test:mutation",
     "lint": "npm run lint:ts && npm run lint:format",
     "lint:ts": "tsc -b jsconfig.json",
     "lint:format": "prettier --check --ignore-path .gitignore .",
@@ -21,6 +21,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@stryker-mutator/core": "^6.2.2",
+    "@stryker-mutator/jest-runner": "^6.2.2",
     "@types/jest": "^29.0.0",
     "jest": "^29.0.3",
     "jest-environment-jsdom": "^29.0.3",

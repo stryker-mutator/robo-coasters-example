@@ -21,6 +21,31 @@ The RoboBar is a small application to demo mutation testing. It actually has a f
 
 **Note:** The RoboBar is developed using [native web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) without a frontend framework. This is done on purpose to keep this example as accessible as possible, as well as to keep the maintenance burden low.
 
+## Try it yourself
+
+1. Install [git](https://git-scm.com)
+1. Install [nodejs](https://nodejs.org/)
+1. Open command prompt and clone this repository:
+   ```shell
+   git clone https://github.com/stryker-mutator/robobar-example
+   ```
+1. Change directory into the robobar and install the dependencies.
+   ```shell
+   cd robobar-example
+   npm install
+   ```
+1. Run tests with npm. This will generate a code coverage report. 
+   ```shell
+   npm test
+   ``` 
+1. Review the 100% code coverage score. Open up the code coverage report located in the `reports/coverage/lcov-report` directory.
+1. Run mutation testing with [Stryker](https://stryker-mutator.io)
+   ```shell
+   npm run test:mutation
+   ```
+1. Review the less than 60% mutation score. Open up the mutation report located in the `reports/mutation` directory.
+1. Run the website with `npm start`. Can you find the bug?
+
 ## Try to install stryker yourself.
 
 If you want to install stryker yourself, step back in history using git:
