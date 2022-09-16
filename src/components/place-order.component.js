@@ -71,8 +71,14 @@ export class PlaceOrderComponent extends RoboComponent {
     selector.class.roboPrice.innerText = currency(orderItem.price);
     /** @type {HTMLInputElement}*/ (selector.class.roboAmount).value =
       orderItem.amount.toString();
-    selector.class.roboIncrement.addEventListener('click', this.increment.bind(this, orderItem));
-    selector.class.roboDecrement.addEventListener('click', this.decrement.bind(this, orderItem));
+    selector.class.roboIncrement.addEventListener(
+      'click',
+      this.increment.bind(this, orderItem)
+    );
+    selector.class.roboDecrement.addEventListener(
+      'click',
+      this.decrement.bind(this, orderItem)
+    );
     return row;
   }
 }

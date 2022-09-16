@@ -43,7 +43,7 @@ export class ReviewOrderComponent extends RoboComponent {
     }
   }
 
-  updateInput(){
+  updateInput() {
     this.age = this.#ageInput.valueAsNumber;
   }
 
@@ -65,8 +65,14 @@ export class ReviewOrderComponent extends RoboComponent {
       this.appendChild(cloneTemplate(reviewOrderTemplate));
       this.#ageInput = /** @type {HTMLInputElement} */ (this.by.id.ageInput);
       this.#ageInput.addEventListener('input', this.updateInput.bind(this));
-      this.by.class.roboSubmitForm.addEventListener('submit', this.submit.bind(this));
-      this.by.class.roboCancel.addEventListener('click', this.cancel.bind(this));
+      this.by.class.roboSubmitForm.addEventListener(
+        'submit',
+        this.submit.bind(this)
+      );
+      this.by.class.roboCancel.addEventListener(
+        'click',
+        this.cancel.bind(this)
+      );
       this.#render();
     } else {
       router.next('/');

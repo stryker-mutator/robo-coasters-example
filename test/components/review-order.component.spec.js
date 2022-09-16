@@ -76,7 +76,7 @@ describe(ReviewOrderComponent.name, () => {
       ageInput.valueAsNumber = 3;
       /** @type {HTMLButtonElement} */
       const submitBtn = sut.querySelector('.roboSubmit');
-      
+
       // Act
       sut.updateInput();
 

@@ -43,7 +43,6 @@ describe(PlaceOrderComponent.name, () => {
     expect(routerNextStub).toHaveBeenCalled();
   });
 
-
   it('should increment the drink amount on increment', () => {
     const roboBeer = createOrderItem({ name: 'Beer', amount: 0 });
     sut.increment(roboBeer);
