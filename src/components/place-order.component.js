@@ -48,7 +48,7 @@ export class PlaceOrderComponent extends RoboComponent {
       this.orderItems = drinks.map((drink) => ({ ...drink, amount: 0 }));
       this.#render();
     });
-    this.by.class.roboSubmit.addEventListener('click', () => this.submit());
+    this.by.class.roboSubmit.addEventListener('click', this.submit.bind(this));
     this.#render();
   }
 
@@ -71,12 +71,8 @@ export class PlaceOrderComponent extends RoboComponent {
     selector.class.roboPrice.innerText = currency(orderItem.price);
     /** @type {HTMLInputElement}*/ (selector.class.roboAmount).value =
       orderItem.amount.toString();
-    selector.class.roboIncrement.addEventListener('click', () =>
-      this.increment(orderItem)
-    );
-    selector.class.roboDecrement.addEventListener('click', () =>
-      this.decrement(orderItem)
-    );
+    selector.class.roboIncrement.addEventListener('click', this.increment.bind(this, orderItem));
+    selector.class.roboDecrement.addEventListener('click', this.decrement.bind(this, orderItem));
     return row;
   }
 }

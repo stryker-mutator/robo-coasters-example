@@ -10,9 +10,13 @@ import { cloneTemplate, RoboComponent, Selector } from './robo.component.js';
 
 export class ReviewOrderComponent extends RoboComponent {
   #age = 0;
+  /** @type {OrderItem[]} */
   #order;
   /** @type {string | undefined}  */
   error;
+
+  /** @type {HTMLInputElement} */
+  #ageInput;
 
   get age() {
     return this.#age;
@@ -27,10 +31,10 @@ export class ReviewOrderComponent extends RoboComponent {
     this.#order = orderService.currentOrder;
   }
 
-  /** @param {SubmitEvent} event */
+  /** @param {Event} event */
   submit(event) {
     event.preventDefault();
-    if (!this.ageCheck || this.isAllowedToBuyAlcohol({ age: this.age })) {
+    if (!this.ageCheck || this.isAllowedToBuyAlcohol()) {
       this.error = undefined;
       router.next('/success');
     } else {
@@ -39,14 +43,17 @@ export class ReviewOrderComponent extends RoboComponent {
     }
   }
 
+  updateInput(){
+    this.age = this.#ageInput.valueAsNumber;
+  }
+
   cancel() {
     orderService.clear();
     router.next('/');
   }
 
-  /** @param {{ age: number; }} customer */
-  isAllowedToBuyAlcohol(customer) {
-    return customer.age > 18;
+  isAllowedToBuyAlcohol() {
+    return this.age > 18;
   }
 
   get ageCheck() {
@@ -56,15 +63,10 @@ export class ReviewOrderComponent extends RoboComponent {
   connectedCallback() {
     if (orderService.currentOrder.length) {
       this.appendChild(cloneTemplate(reviewOrderTemplate));
-      const ageInput = /** @type {HTMLInputElement} */ (this.by.id.ageInput);
-      ageInput.addEventListener('input', () => {
-        this.age = ageInput.valueAsNumber;
-      });
-      /** @type {HTMLSpanElement} */
-      this.by.class.roboSubmitForm.addEventListener('submit', (ev) =>
-        this.submit(ev)
-      );
-      this.by.class.roboCancel.addEventListener('click', () => this.cancel());
+      this.#ageInput = /** @type {HTMLInputElement} */ (this.by.id.ageInput);
+      this.#ageInput.addEventListener('input', this.updateInput.bind(this));
+      this.by.class.roboSubmitForm.addEventListener('submit', this.submit.bind(this));
+      this.by.class.roboCancel.addEventListener('click', this.cancel.bind(this));
       this.#render();
     } else {
       router.next('/');

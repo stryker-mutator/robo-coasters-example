@@ -32,9 +32,7 @@ describe(ReviewOrderComponent.name, () => {
   it('should navigate back on cancel', () => {
     order.push(createOrderItem());
     createSut();
-    /** @type {HTMLButtonElement} */
-    const cancelBtn = sut.querySelector('.roboCancel');
-    cancelBtn.click();
+    sut.cancel();
     expect(routerNextStub).toHaveBeenCalled();
   });
 
@@ -49,7 +47,7 @@ describe(ReviewOrderComponent.name, () => {
     it('should allow if ageCheck is disabled', () => {
       orderItem.isAlcoholic = false;
       createSut();
-      submitForm();
+      sut.submit(new Event('submit'));
       expect(routerNextStub).toBeCalled();
     });
 
@@ -57,7 +55,7 @@ describe(ReviewOrderComponent.name, () => {
       orderItem.isAlcoholic = true;
       createSut();
       sut.age = 24;
-      submitForm();
+      sut.submit(new Event('submit'));
       expect(routerNextStub).toHaveBeenCalled();
     });
 
@@ -65,8 +63,8 @@ describe(ReviewOrderComponent.name, () => {
       orderItem.isAlcoholic = true;
       createSut();
       sut.age = 12;
-      submitForm();
-      expect(sut.error).toBeTruthy();
+      sut.submit(new Event('submit'));
+      expect(sut.error).not.toBeUndefined();
     });
 
     it('should enable the submit button when age input is given', () => {
@@ -75,13 +73,12 @@ describe(ReviewOrderComponent.name, () => {
       createSut();
       /** @type {HTMLInputElement} */
       const ageInput = sut.querySelector('#ageInput');
-      const inputEvent = new InputEvent('input', { bubbles: true });
       ageInput.valueAsNumber = 3;
       /** @type {HTMLButtonElement} */
       const submitBtn = sut.querySelector('.roboSubmit');
-
+      
       // Act
-      ageInput.dispatchEvent(inputEvent);
+      sut.updateInput();
 
       // Assert
       expect(submitBtn.disabled).toBeFalsy();
@@ -93,10 +90,5 @@ describe(ReviewOrderComponent.name, () => {
       document.createElement('robo-review-order')
     );
     return document.body.appendChild(sut);
-  }
-  function submitForm() {
-    /** @type {HTMLButtonElement} */
-    const submitBtn = sut.querySelector('.roboSubmit');
-    submitBtn.click();
   }
 });

@@ -28,88 +28,38 @@ describe(PlaceOrderComponent.name, () => {
     sut.remove();
   });
 
-  it('should retrieve and render the drinks to order', async () => {
+  it('should navigate to next page on submit', async () => {
     // Arrange
-    const drinks = [
-      createDrink({ name: 'Beer', price: 4.2 }),
-      createDrink({ name: 'Wine', price: 5 }),
-    ];
+    const drinks = [createDrink({ name: 'Beer', price: 4.2 })];
     getDrinksStub.mockResolvedValue(drinks);
-
-    // Act
     createSut();
     await tick();
+    sut.increment(sut.orderItems[0]);
+
+    // Act
+    sut.submit();
 
     // Assert
-    /** @type {HTMLTableSectionElement} */
-    const tableBody = sut.querySelector('tbody');
-    expect(tableBody.rows).toHaveLength(2);
+    expect(routerNextStub).toHaveBeenCalled();
   });
 
-  describe('with 3 drinks', () => {
-    /** @type {HTMLTableSectionElement} */
-    let tableBody;
-    /** @type {Drink[]} */
-    let drinks;
-    beforeEach(async () => {
-      drinks = [
-        createDrink({ name: 'Beer', price: 4.2 }),
-        createDrink({ name: 'Wine', price: 5 }),
-        createDrink({ name: 'Cola', price: 4 }),
-      ];
-      getDrinksStub.mockResolvedValue(drinks);
-      createSut();
-      await tick();
-      tableBody = sut.querySelector('tbody');
-    });
 
-    it('should increment the drink amount on increment', () => {
-      const roboBeer = createOrderItem({ name: 'Beer', amount: 0 });
-      sut.increment(roboBeer);
-      expect(roboBeer.amount).toEqual(1);
-    });
+  it('should increment the drink amount on increment', () => {
+    const roboBeer = createOrderItem({ name: 'Beer', amount: 0 });
+    sut.increment(roboBeer);
+    expect(roboBeer.amount).toEqual(1);
+  });
 
-    it('should go below 0 on decrement', () => {
-      const roboBeer = createOrderItem({ name: 'Robo Beer', amount: 0 });
-      sut.decrement(roboBeer);
-      expect(roboBeer.amount).toEqual(0);
-    });
+  it('should decrement the drink amount on decrement', () => {
+    const orderItem = createOrderItem({ name: 'Beer', amount: 3 });
+    sut.decrement(orderItem);
+    expect(orderItem.amount).toBe(2);
+  });
 
-    it('should bind increment button', () => {
-      /** @type {HTMLButtonElement} */
-      const incrementButton = tableBody.querySelector(
-        'tr:nth-child(1) .roboIncrement'
-      );
-      incrementButton.click();
-      expect(sut.orderItems[0].amount).toBe(1);
-    });
-    it('should bind decrement button', () => {
-      const orderItem = sut.orderItems[0];
-      orderItem.amount = 3;
-      /** @type {HTMLButtonElement} */
-      const decrementButton = tableBody.querySelector(
-        'tr:nth-child(1) .roboDecrement'
-      );
-      decrementButton.click();
-      expect(orderItem.amount).toBe(2);
-    });
-
-    it('should navigate to next page on submit', () => {
-      // Arrange
-      /** @type {HTMLButtonElement} */
-      const incrementButton = tableBody.querySelector(
-        'tr:nth-child(1) .roboIncrement'
-      );
-      incrementButton.click();
-      /** @type {HTMLButtonElement} */
-      const btnSubmit = sut.querySelector('.roboSubmit');
-
-      // Act
-      btnSubmit.click();
-
-      // Assert
-      expect(routerNextStub).toHaveBeenCalled();
-    });
+  it('should not go below 0 on decrement', () => {
+    const roboBeer = createOrderItem({ name: 'Robo Beer', amount: 0 });
+    sut.decrement(roboBeer);
+    expect(roboBeer.amount).toEqual(0);
   });
 
   function createSut() {
