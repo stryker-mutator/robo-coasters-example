@@ -34,10 +34,10 @@ The RoboBar is a small application to demo mutation testing. It actually has a f
    cd robobar-example
    npm install
    ```
-1. Run tests with npm. This will generate a code coverage report. 
+1. Run tests with npm. This will generate a code coverage report.
    ```shell
    npm test
-   ``` 
+   ```
 1. Review the 100% code coverage score. Open up the code coverage report located in the `reports/coverage/lcov-report` directory.
 1. Run mutation testing with [Stryker](https://stryker-mutator.io)
    ```shell
@@ -50,14 +50,14 @@ The RoboBar is a small application to demo mutation testing. It actually has a f
 
 If you want to install stryker yourself, step back in history using git:
 
-```
+```shell
 git checkout pre-stryker
 npm install
 ```
 
 After that you can install stryker for yourself:
 
-```js
+```shell
 npm i -D @stryker-mutator/core
 npx stryker init
 ```
@@ -97,6 +97,6 @@ After the plugins are installed, open the `stryker.conf.json` file and make the 
 
 After the plugins are installed, try it out:
 
-```
+```shell
 npx stryker run
 ```
