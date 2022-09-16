@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm ci
-      - run: npm run test:mutation
+      - run: npm run test:mutation -- --reporters progress,dashboard
         env:
           STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
