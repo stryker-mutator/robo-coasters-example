@@ -1,4 +1,4 @@
-[![Code coverage badge](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://stryker-mutator.io/robobar-example/reports/coverage/index.html)
+[![Code coverage badge](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://stryker-mutator.io/robobar-example/reports/coverage/lcov-report/index.html)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fstryker-mutator%2Frobobar-example%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/stryker-mutator/robobar-example/master)
 
 # Welcome to the RoboBar
