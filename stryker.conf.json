@@ -4,8 +4,6 @@
   "packageManager": "npm",
   "reporters": ["html", "clear-text", "progress"],
   "testRunner": "jest",
-  "coverageAnalysis": "perTest",
-  "coverageAnalysis": "perTest",
   "testRunnerNodeArgs": ["--experimental-vm-modules"],
   "jest": {
     "configFile": "jest.config.cjs"
