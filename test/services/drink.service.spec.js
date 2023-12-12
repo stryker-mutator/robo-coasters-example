@@ -1,22 +1,22 @@
 import { jest } from '@jest/globals';
-import { DrinkService } from '../../src/services/drink.service.js';
-import { createDrink } from '../helpers.js';
+import { RideService } from '../../src/services/ride.service.js';
+import { createRide } from '../helpers.js';
 
-describe(DrinkService.name, () => {
+describe(RideService.name, () => {
   /** @type {import('jest-mock').MockInstance<typeof fetch>} */
   let fetchMock;
-  /** @type {DrinkService} */
+  /** @type {RideService} */
   let sut;
 
   beforeEach(() => {
     fetchMock = jest.spyOn(global, 'fetch');
-    sut = new DrinkService();
+    sut = new RideService();
   });
 
-  it('should retrieve drinks from the server when getDrinks is called', async () => {
-    const expectedDrinks = [createDrink()];
-    fetchMock.mockResolvedValue(new Response(JSON.stringify(expectedDrinks)));
-    const actual = await sut.getDrinks();
-    expect(actual).toStrictEqual(expectedDrinks);
+  it('should retrieve rides from the server when getRides is called', async () => {
+    const expectedRides = [createRide()];
+    fetchMock.mockResolvedValue(new Response(JSON.stringify(expectedRides)));
+    const actual = await sut.getRides();
+    expect(actual).toStrictEqual(expectedRides);
   });
 });

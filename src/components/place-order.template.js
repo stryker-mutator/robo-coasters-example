@@ -7,7 +7,7 @@ templatePlaceOrder.innerHTML = `
     <table class="table col-12">
       <thead>
         <tr>
-          <th>Drink</th>
+          <th>Ride</th>
           <th colspan="2">Price</th>
         </tr>
       </thead>

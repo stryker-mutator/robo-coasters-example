@@ -4,7 +4,7 @@ import { orderService } from '../../src/services/order.service.js';
 import { createOrderItem } from '../helpers.js';
 
 describe(SuccessComponent.name, () => {
-  /** @type {OrderItem[]} */
+  /** @type {TicketOrder[]} */
   let order;
   /** @type {HTMLElement} */
   let sut;

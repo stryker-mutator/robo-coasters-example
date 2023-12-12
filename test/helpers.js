@@ -1,24 +1,24 @@
 /**
- * @param {Partial<Drink>} [overrides]
- * @returns {Drink}
+ * @param {Partial<Ride>} [overrides]
+ * @returns {Ride}
  */
-export function createDrink(overrides) {
+export function createRide(overrides) {
   return {
-    isAlcoholic: false,
-    name: 'Virgin Mojito',
+    mustBeAdult: false,
+    name: 'Robo Choo Choo Train',
     price: 5,
     ...overrides,
   };
 }
 
 /**
- * @param {Partial<OrderItem>} [overrides]
- * @returns {OrderItem}
+ * @param {Partial<TicketOrder>} [overrides]
+ * @returns {TicketOrder}
  */
 export function createOrderItem(overrides) {
   return {
-    isAlcoholic: false,
-    name: 'Virgin Mojito',
+    mustBeAdult: false,
+    name: 'Robo Choo Choo Train',
     price: 5,
     amount: 1,
     ...overrides,

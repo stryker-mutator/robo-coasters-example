@@ -5,8 +5,8 @@ const template = document.createElement('template');
 template.innerHTML = `
 <div class="container">
     <div class="row">
-        <h1 class="col-12 display-2">Robobar
-            <small class="text-muted">Futuristic drinks</small>
+        <h1 class="col-12 display-2">RoboCoasters
+            <small class="text-muted">Futuristic park</small>
         </h1>
     </div>
     <div id="view"><robo-place-order></robo-place-order></div>
@@ -16,7 +16,7 @@ template.innerHTML = `
     </div>
 </div>
 `;
-export class RobobarComponent extends RoboComponent {
+export class RobocoastersComponent extends RoboComponent {
   /** @type {string | undefined} */
   currentlyViewedRoute;
 
@@ -53,4 +53,4 @@ export class RobobarComponent extends RoboComponent {
   }
 }
 
-customElements.define('robo-bar', RobobarComponent);
+customElements.define('robo-coasters', RobocoastersComponent);

@@ -1,10 +1,10 @@
-interface Drink {
+interface Ride {
   name: string;
   price: number;
-  isAlcoholic: boolean;
+  mustBeAdult: boolean;
 }
 
-interface OrderItem extends Drink {
+interface TicketOrder extends Ride {
   amount: number;
 }
 

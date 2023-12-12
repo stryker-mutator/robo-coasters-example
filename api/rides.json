@@ -1,0 +1,5 @@
+[
+  { "name": "Roba Swings", "price": 5, "mustBeAdult": false },
+  { "name": "Robo Merry Go Round", "price": 7.5, "mustBeAdult": true },
+  { "name": "Robo Coaster Of Doom", "price": 10, "mustBeAdult": true }
+]

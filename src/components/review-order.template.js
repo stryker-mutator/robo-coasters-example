@@ -18,7 +18,7 @@ reviewOrderTemplate.innerHTML = `<div class="row">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Drink</th>
+            <th>Ride</th>
             <th>#</th>
             <th>Price</th>
             <th>Total</th>
@@ -57,6 +57,6 @@ reviewRowTemplate.innerHTML = `<tr>
     <em class="roboName"></em>
   </td>
   <td class="roboAmount"></td>
-  <td class="roboPricePerDrink"></td>
+  <td class="roboPricePerRide"></td>
   <td class="roboPrice"></td>
 </tr>`;

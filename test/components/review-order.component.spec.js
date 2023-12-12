@@ -5,7 +5,7 @@ import { orderService } from '../../src/services/order.service.js';
 import { createOrderItem } from '../helpers.js';
 
 describe(ReviewOrderComponent.name, () => {
-  /** @type {OrderItem[]} */
+  /** @type {TicketOrder[]} */
   let order;
   /** @type {ReviewOrderComponent} */
   let sut;
@@ -37,7 +37,7 @@ describe(ReviewOrderComponent.name, () => {
   });
 
   describe('submit', () => {
-    /** @type {OrderItem} */
+    /** @type {TicketOrder} */
     let orderItem;
     beforeEach(() => {
       orderItem = createOrderItem();
@@ -45,14 +45,14 @@ describe(ReviewOrderComponent.name, () => {
     });
 
     it('should allow if ageCheck is disabled', () => {
-      orderItem.isAlcoholic = false;
+      orderItem.mustBeAdult = false;
       createSut();
       sut.submit(new Event('submit'));
       expect(routerNextStub).toBeCalled();
     });
 
     it('should allow if user is 24', () => {
-      orderItem.isAlcoholic = true;
+      orderItem.mustBeAdult = true;
       createSut();
       sut.age = 24;
       sut.submit(new Event('submit'));
@@ -60,7 +60,7 @@ describe(ReviewOrderComponent.name, () => {
     });
 
     it('should not allow if user is 12', () => {
-      orderItem.isAlcoholic = true;
+      orderItem.mustBeAdult = true;
       createSut();
       sut.age = 12;
       sut.submit(new Event('submit'));
@@ -69,7 +69,7 @@ describe(ReviewOrderComponent.name, () => {
 
     it('should enable the submit button when age input is given', () => {
       // Arrange
-      orderItem.isAlcoholic = true;
+      orderItem.mustBeAdult = true;
       createSut();
       /** @type {HTMLInputElement} */
       const ageInput = sut.querySelector('#ageInput');

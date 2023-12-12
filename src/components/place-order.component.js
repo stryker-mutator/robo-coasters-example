@@ -1,5 +1,5 @@
 import { orderService } from '../services/order.service.js';
-import { drinkService } from '../services/drink.service.js';
+import { rideService } from '../services/ride.service.js';
 import { router } from '../router.js';
 import {
   templatePlaceOrder,
@@ -9,15 +9,15 @@ import { currency } from '../pipes/currency.pipe.js';
 import { cloneTemplate, RoboComponent, Selector } from './robo.component.js';
 
 export class PlaceOrderComponent extends RoboComponent {
-  /** @type {OrderItem[]} */
-  orderItems = [];
+  /** @type {TicketOrder[]} */
+  orders = [];
 
-  /** @param {OrderItem} orderItem */
+  /** @param {TicketOrder} orderItem */
   increment(orderItem) {
     orderItem.amount++;
     this.#render();
   }
-  /** @param {OrderItem} orderItem */
+  /** @param {TicketOrder} orderItem */
   decrement(orderItem) {
     orderItem.amount--;
     if (orderItem.amount < 0) {
@@ -27,25 +27,25 @@ export class PlaceOrderComponent extends RoboComponent {
   }
 
   get totalPrice() {
-    return this.orderItems.reduce(
-      (total, drink) => total + drink.amount * drink.price,
+    return this.orders.reduce(
+      (total, ticket) => total + ticket.amount * ticket.price,
       0
     );
   }
 
   get submitEnabled() {
-    return this.orderItems.some((drink) => drink.amount > 0);
+    return this.orders.some((order) => order.amount > 0);
   }
 
   submit() {
-    orderService.currentOrder = this.orderItems.filter((drink) => drink.amount);
+    orderService.currentOrder = this.orders.filter((order) => order.amount);
     router.next('/review');
   }
 
   connectedCallback() {
     this.appendChild(cloneTemplate(templatePlaceOrder));
-    drinkService.getDrinks().then((drinks) => {
-      this.orderItems = drinks.map((drink) => ({ ...drink, amount: 0 }));
+    rideService.getRides().then((rides) => {
+      this.orders = rides.map((ride) => ({ ...ride, amount: 0 }));
       this.#render();
     });
     this.by.class.roboSubmit.addEventListener('click', this.submit.bind(this));
@@ -54,7 +54,7 @@ export class PlaceOrderComponent extends RoboComponent {
 
   #render() {
     this.by.class.roboOrderTableBody.replaceChildren(
-      ...this.orderItems.map((orderItem) => this.#renderOrderRow(orderItem))
+      ...this.orders.map((orderItem) => this.#renderOrderRow(orderItem))
     );
     this.by.class.roboTotalPrice.innerText = currency(this.totalPrice);
     /** @type {HTMLInputElement} */ (this.by.class.roboSubmit).disabled =
@@ -62,7 +62,7 @@ export class PlaceOrderComponent extends RoboComponent {
   }
 
   /**
-   * @param {OrderItem} orderItem
+   * @param {TicketOrder} orderItem
    */
   #renderOrderRow(orderItem) {
     const row = cloneTemplate(templateOrderRow);
