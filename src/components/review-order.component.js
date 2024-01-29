@@ -1,5 +1,5 @@
 import { currency } from '../pipes/currency.pipe.js';
-import { drinksSummary } from '../pipes/drinks-summary.pipe.js';
+import { ridesSummary } from '../pipes/rides-summary.pipe.js';
 import {
   reviewOrderTemplate,
   reviewRowTemplate,
@@ -10,7 +10,7 @@ import { cloneTemplate, RoboComponent, Selector } from './robo.component.js';
 
 export class ReviewOrderComponent extends RoboComponent {
   #age = 0;
-  /** @type {OrderItem[]} */
+  /** @type {TicketOrder[]} */
   #order;
   /** @type {string | undefined}  */
   error;
@@ -34,11 +34,11 @@ export class ReviewOrderComponent extends RoboComponent {
   /** @param {Event} event */
   submit(event) {
     event.preventDefault();
-    if (!this.ageCheck || this.isAllowedToBuyAlcohol()) {
+    if (!this.ageCheck || this.isAllowedToRideAdultRide()) {
       this.error = undefined;
       router.next('/success');
     } else {
-      this.error = 'Only adults can buy alcohol!';
+      this.error = 'Only adults can buy ride this ride!';
       this.#render();
     }
   }
@@ -52,12 +52,12 @@ export class ReviewOrderComponent extends RoboComponent {
     router.next('/');
   }
 
-  isAllowedToBuyAlcohol() {
+  isAllowedToRideAdultRide() {
     return this.age > 18;
   }
 
   get ageCheck() {
-    return this.#order.some((drink) => drink.isAlcoholic);
+    return this.#order.some((ride) => ride.mustBeAdult);
   }
 
   connectedCallback() {
@@ -80,7 +80,7 @@ export class ReviewOrderComponent extends RoboComponent {
   }
 
   #render() {
-    this.by.class.roboTotalAmount.innerText = drinksSummary(this.#order);
+    this.by.class.roboTotalAmount.innerText = ridesSummary(this.#order);
     this.by.class.roboAlert.hidden = !this.error;
     this.by.class.roboAlertText.innerText = this.error;
     this.by.class.roboAgeCheck.hidden = !this.ageCheck;
@@ -97,7 +97,7 @@ export class ReviewOrderComponent extends RoboComponent {
 
         selector.class.roboName.innerText = orderItem.name;
         selector.class.roboAmount.innerText = orderItem.amount.toString();
-        selector.class.roboPricePerDrink.innerText = currency(orderItem.price);
+        selector.class.roboPricePerRide.innerText = currency(orderItem.price);
         selector.class.roboPrice.innerText = currency(
           orderItem.price * orderItem.amount
         );

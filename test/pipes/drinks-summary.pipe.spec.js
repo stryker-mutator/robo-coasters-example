@@ -1,15 +1,11 @@
-import { drinksSummary } from '../../src/pipes/drinks-summary.pipe.js';
+import { ridesSummary } from '../../src/pipes/rides-summary.pipe.js';
 import { createOrderItem } from '../helpers.js';
 
-describe(drinksSummary.name, () => {
-  it('should provide "drink" postfix for 1', () => {
-    expect(drinksSummary([createOrderItem({ amount: 1 })])).toContain(
-      '1 drink'
-    );
+describe(ridesSummary.name, () => {
+  it('should provide "ride" postfix for 1', () => {
+    expect(ridesSummary([createOrderItem({ amount: 1 })])).toContain('1 ride');
   });
-  it('should provide "drinks" postfix for 0', () => {
-    expect(drinksSummary([createOrderItem({ amount: 0 })])).toContain(
-      '0 drinks'
-    );
+  it('should provide "rides" postfix for 0', () => {
+    expect(ridesSummary([createOrderItem({ amount: 0 })])).toContain('0 rides');
   });
 });

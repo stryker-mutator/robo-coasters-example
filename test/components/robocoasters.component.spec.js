@@ -1,10 +1,10 @@
 import { jest } from '@jest/globals';
-import { RobobarComponent } from '../../src/components/robobar.component.js';
+import { RobocoastersComponent } from '../../src/components/robocoasters.component.js';
 
 import { router } from '../../src/router.js';
 
-describe(RobobarComponent.name, () => {
-  /** @type {RobobarComponent} */
+describe(RobocoastersComponent.name, () => {
+  /** @type {RobocoastersComponent} */
   let sut;
 
   /** @type {import('jest-mock').SpyInstance<(callback: RouteCallback) => () => void>} */
@@ -18,7 +18,9 @@ describe(RobobarComponent.name, () => {
     routerOnNextStub = jest
       .spyOn(router, 'onNext')
       .mockImplementation(() => /** @type {any} */ (routerUnsubscribeStub));
-    sut = /** @type {RobobarComponent} */ (document.createElement('robo-bar'));
+    sut = /** @type {RobocoastersComponent} */ (
+      document.createElement('robo-coasters')
+    );
     document.body.appendChild(sut);
   });
 
