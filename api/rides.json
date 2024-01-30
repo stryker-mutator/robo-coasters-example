@@ -1,5 +1,21 @@
 [
-  { "name": "Roba Swings", "price": 5, "mustBeAdult": false },
-  { "name": "Robo Merry Go Round", "price": 7.5, "mustBeAdult": true },
-  { "name": "Robo Coaster Of Doom", "price": 10, "mustBeAdult": true }
+  {
+    "id": "swings",
+    "name": "Roba Swings",
+    "description": "Be the sultan who swings!",
+    "image": "/img/swing.png"
+  },
+  {
+    "id": "merrobo",
+    "name": "Merrobo Round",
+    "description": "Very safe. This is highly recommended for any age.",
+    "image": "/img/merry-go-round.png"
+  },
+  {
+    "id": "coaster",
+    "name": "Robo Coaster Of Doom",
+    "description": "This is the most dangerous ride in the park. You must be at least 140cm tall to ride this ride.",
+    "minHeight": 140,
+    "image": "/img/coaster.png"
+  }
 ]

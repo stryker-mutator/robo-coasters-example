@@ -1,11 +1,19 @@
 interface Ride {
   name: string;
-  price: number;
-  mustBeAdult: boolean;
+  id: string;
+  image: string;
+  description: string;
+  minHeight?: number;
 }
 
-interface TicketOrder extends Ride {
-  amount: number;
+interface RideOrder {
+  people: Person[];
+  ride: Ride;
 }
 
-type RouteCallback = (route: string) => void;
+interface Person {
+  index: number;
+  height: number;
+}
+
+type RouteCallback = (route: string[]) => void;

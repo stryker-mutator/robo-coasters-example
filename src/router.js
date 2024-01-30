@@ -11,8 +11,8 @@ export class Router {
     });
   }
 
-  /** @param {string} route */
-  next(route) {
+  /** @param {string[]} route */
+  navigate(route) {
     this.#currentRoute = route;
   }
   /** @param {RouteCallback} callback */
@@ -25,10 +25,10 @@ export class Router {
   }
 
   get #currentRoute() {
-    return this.#global.location.hash.substring(1);
+    return this.#global.location.hash.substring(1).split('/');
   }
   set #currentRoute(route) {
-    this.#global.location.hash = route;
+    this.#global.location.hash = `#${route.join('/')}`;
   }
 }
 

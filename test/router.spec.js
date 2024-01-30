@@ -37,7 +37,7 @@ describe(Router.name, () => {
     );
 
     // Act
-    sut.next('#/bar');
+    sut.navigate(['bar']);
     eventListener(new HashChangeEvent('hashchange'));
 
     // Assert

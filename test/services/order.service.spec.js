@@ -1,6 +1,6 @@
 import { jest } from '@jest/globals';
 import { OrderService } from '../../src/services/order.service.js';
-import { createOrderItem } from '../helpers.js';
+import { createRideOrder } from '../helpers.js';
 
 describe(OrderService, () => {
   /** @type {OrderService} */
@@ -23,7 +23,7 @@ describe(OrderService, () => {
 
   describe('currentOrder', () => {
     it('should retrieve from storage', () => {
-      const expected = [createOrderItem()];
+      const expected = createRideOrder();
       storageMock.getItem.mockReturnValue(JSON.stringify(expected));
       expect(sut.currentOrder).toStrictEqual(expected);
     });

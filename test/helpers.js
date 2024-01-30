@@ -4,23 +4,34 @@
  */
 export function createRide(overrides) {
   return {
-    mustBeAdult: false,
+    id: 'robo-train',
     name: 'Robo Choo Choo Train',
-    price: 5,
+    description: 'A train ride for robots',
+    image: 'https://via.placeholder.com/300x150',
     ...overrides,
   };
 }
 
 /**
- * @param {Partial<TicketOrder>} [overrides]
- * @returns {TicketOrder}
+ * @param {Partial<RideOrder>} [overrides]
+ * @returns {RideOrder}
  */
-export function createOrderItem(overrides) {
+export function createRideOrder(overrides) {
   return {
-    mustBeAdult: false,
-    name: 'Robo Choo Choo Train',
-    price: 5,
-    amount: 1,
+    people: [createPerson()],
+    ride: createRide(),
+    ...overrides,
+  };
+}
+
+/**
+ * @param {Partial<Person>} [overrides]
+ * @returns {Person}
+ */
+export function createPerson(overrides) {
+  return {
+    index: 1,
+    height: 20,
     ...overrides,
   };
 }
