@@ -17,17 +17,22 @@ export class Selector {
       {},
       {
         get: (_, property) =>
-          this.#element?.querySelector(`.${String(property)}`),
-      }
+          this.#element?.querySelector(`.${toKebabCase(String(property))}`),
+      },
     );
     this.id = new Proxy(
       {},
       {
         get: (_, property) =>
-          this.#element?.querySelector(`#${String(property)}`),
-      }
+          this.#element?.querySelector(`#${toKebabCase(String(property))}`),
+      },
     );
   }
+}
+
+/** @param {string} str */
+function toKebabCase(str) {
+  return str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
 }
 
 /**

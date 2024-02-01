@@ -1,26 +1,37 @@
 /**
- * @param {Partial<Drink>} [overrides]
- * @returns {Drink}
+ * @param {Partial<Ride>} [overrides]
+ * @returns {Ride}
  */
-export function createDrink(overrides) {
+export function createRide(overrides) {
   return {
-    isAlcoholic: false,
-    name: 'Virgin Mojito',
-    price: 5,
+    id: 'robo-train',
+    name: 'Robo Choo Choo Train',
+    description: 'A train ride for robots',
+    image: 'https://via.placeholder.com/300x150',
     ...overrides,
   };
 }
 
 /**
- * @param {Partial<OrderItem>} [overrides]
- * @returns {OrderItem}
+ * @param {Partial<RideOrder>} [overrides]
+ * @returns {RideOrder}
  */
-export function createOrderItem(overrides) {
+export function createRideOrder(overrides) {
   return {
-    isAlcoholic: false,
-    name: 'Virgin Mojito',
-    price: 5,
-    amount: 1,
+    people: [createPerson()],
+    ride: createRide(),
+    ...overrides,
+  };
+}
+
+/**
+ * @param {Partial<Person>} [overrides]
+ * @returns {Person}
+ */
+export function createPerson(overrides) {
+  return {
+    index: 1,
+    height: 20,
     ...overrides,
   };
 }

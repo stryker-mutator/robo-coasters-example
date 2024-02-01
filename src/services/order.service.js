@@ -1,5 +1,5 @@
 export class OrderService {
-  /** @type {OrderItem[] | undefined} */
+  /** @type {RideOrder | undefined} */
   #currentOrder;
 
   /**
@@ -10,18 +10,18 @@ export class OrderService {
   }
 
   /**
-   * @type {OrderItem[]}
+   * @type {RideOrder}
    */
   get currentOrder() {
     if (!this.#currentOrder && this.localStorage.getItem('currentOrder')) {
       this.#currentOrder = JSON.parse(
-        this.localStorage.getItem('currentOrder')
+        this.localStorage.getItem('currentOrder'),
       );
     }
     return this.#currentOrder;
   }
   /**
-   * @param {OrderItem[]} value
+   * @param {RideOrder} value
    */
   set currentOrder(value) {
     this.#currentOrder = value;
