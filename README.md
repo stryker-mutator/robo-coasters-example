@@ -11,9 +11,9 @@ _How code coverage of 100% could mean less than 60% is tested._
 
 No time to run the example yourself? Don't worry, we did it for you. Open it right in your browser:
 
-- [The RoboCoasters website](https://stryker-mutator.io/robocoasters-example/)
-- [Coverage report](https://stryker-mutator.io/robocoasters-example/reports/coverage/lcov-report/index.html)
-- [Mutation report](https://dashboard.stryker-mutator.io/reports/github.com/stryker-mutator/robocoasters-example/master)
+- [The RoboCoasters website](https://stryker-mutator.io/robo-coasters-example/)
+- [Coverage report](https://stryker-mutator.io/robo-coasters-example/reports/coverage/lcov-report/index.html)
+- [Mutation report](https://dashboard.stryker-mutator.io/reports/github.com/stryker-mutator/robo-coasters-example/master)
 
 ## What is this?
 
