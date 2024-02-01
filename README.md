@@ -5,7 +5,7 @@
 
 > An introduction to mutation testing
 
-_How code coverage of 100% could mean less than 60% is tested._
+_How code coverage of 100% could mean only 60% is tested._
 
 ## TL;DR
 
