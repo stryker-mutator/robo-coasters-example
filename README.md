@@ -9,7 +9,7 @@ _How code coverage of 100% could mean less than 60% is tested._
 
 ## TL;DR
 
-No time to run the example yourself? Don't worry, we did it for you. Open it right in your browser:
+No time to run the example yourself? Don't worry; we did it for you. Open it right in your browser:
 
 - [The RoboCoasters website](https://stryker-mutator.io/robo-coasters-example/)
 - [Coverage report](https://stryker-mutator.io/robo-coasters-example/reports/coverage/lcov-report/index.html)
@@ -17,9 +17,9 @@ No time to run the example yourself? Don't worry, we did it for you. Open it rig
 
 ## What is this?
 
-RoboCoasters is a small application to demo mutation testing. It actually has a fair amount of unit tests. When we wrote this application, we didn't even try our best to write bad tests. We just focussed on code coverage and didn't practice Test Driven Development. It turns out it's really easy to write bad tests or forget a few important test cases. RoboCoasters even has a fairly large bug. Finding it is pretty easy using the mutation report. Why don't you give it a try? 😁
+RoboCoasters is a small application to demo mutation testing. It has a fair amount of unit tests. We didn't try our best to write bad tests when we wrote this application. We just focussed on code coverage and didn't practice Test Driven Development. It turns out it's easy to write bad tests or forget a few important test cases. RoboCoasters even has a fairly large bug. Finding it is easy using the mutation report. Why don't you give it a try? 😁
 
-**Note:** Robo coasters is developed using [native web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) without a frontend framework. This is done on purpose to keep this example as accessible as possible, as well as to keep the maintenance burden low.
+**Note:** Robo coasters is developed using [native web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) without a frontend framework. This is done on purpose to keep this example as accessible as possible and to keep the maintenance burden low.
 
 ## Try it yourself
 
@@ -38,12 +38,12 @@ RoboCoasters is a small application to demo mutation testing. It actually has a 
    ```shell
    npm test
    ```
-1. Review the 100% code coverage score. Open up the code coverage report located in the `reports/coverage/lcov-report` directory.
+1. Review the 100% code coverage score. Open up the code coverage report in the `reports/coverage/lcov-report` directory.
 1. Run mutation testing with [Stryker](https://stryker-mutator.io)
    ```shell
    npm run test:mutation
    ```
-1. Review the less than 60% mutation score. Open up the mutation report located in the `reports/mutation` directory.
+1. Review the less than 60% mutation score. Open up the mutation report in the `reports/mutation` directory.
 1. Run the website with `npm start`. Can you find the bug?
 
 ## Try to install stryker yourself.
