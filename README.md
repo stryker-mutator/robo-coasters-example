@@ -1,5 +1,5 @@
-[![Code coverage badge](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://stryker-mutator.io/robocoasters-example/reports/coverage/lcov-report/index.html)
-[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fstryker-mutator%2Frobocoasters-example%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/stryker-mutator/robocoasters-example/master)
+[![Code coverage badge](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://stryker-mutator.io/robo-coasters-example/reports/coverage/lcov-report/index.html)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fstryker-mutator%2Frobo-coasters-example%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/stryker-mutator/robo-coasters-example/master)
 
 # Welcome to RoboCoasters
 
@@ -17,9 +17,9 @@ No time to run the example yourself? Don't worry, we did it for you. Open it rig
 
 ## What is this?
 
-Robocoasters is a small application to demo mutation testing. It actually has a fair amount of unit tests. When we wrote this application, we didn't even try our best to write bad tests. We just focussed on code coverage and didn't practice Test Driven Development. It turns out it's really easy to write bad tests or forget a few important test cases. Robocoasters even has a fairly large bug. Finding it is pretty easy using the mutation report. Why don't you give it a try? 😁
+RoboCoasters is a small application to demo mutation testing. It actually has a fair amount of unit tests. When we wrote this application, we didn't even try our best to write bad tests. We just focussed on code coverage and didn't practice Test Driven Development. It turns out it's really easy to write bad tests or forget a few important test cases. RoboCoasters even has a fairly large bug. Finding it is pretty easy using the mutation report. Why don't you give it a try? 😁
 
-**Note:** Robocoasters is developed using [native web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) without a frontend framework. This is done on purpose to keep this example as accessible as possible, as well as to keep the maintenance burden low.
+**Note:** Robo coasters is developed using [native web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) without a frontend framework. This is done on purpose to keep this example as accessible as possible, as well as to keep the maintenance burden low.
 
 ## Try it yourself
 
@@ -27,11 +27,11 @@ Robocoasters is a small application to demo mutation testing. It actually has a 
 1. Install [nodejs](https://nodejs.org/)
 1. Open command prompt and clone this repository:
    ```shell
-   git clone https://github.com/stryker-mutator/robocoasters-example
+   git clone https://github.com/stryker-mutator/robo-coasters-example
    ```
-1. Change directory into robocoasters and install the dependencies.
+1. Change directory into `robo-coasters-example` and install the dependencies.
    ```shell
-   cd robocoasters-example
+   cd robo-coasters-example
    npm install
    ```
 1. Run tests with npm. This will generate a code coverage report.
@@ -58,8 +58,7 @@ npm install
 After that you can install stryker for yourself:
 
 ```shell
-npm i -D @stryker-mutator/core
-npx stryker init
+npm init stryker
 ```
 
 Choose the following options in the questionnaire:
@@ -86,10 +85,7 @@ After the plugins are installed, open the `stryker.conf.json` file and make the 
   "testRunner": "jest",
 - "coverageAnalysis": "perTest"
 + "coverageAnalysis": "perTest",
-+ "testRunnerNodeArgs": ["--experimental-vm-modules"],
-+ "jest": {
-+   "configFile": "jest.config.cjs"
-+ }
++ "testRunnerNodeArgs": ["--experimental-vm-modules"]
 }
 ```
 

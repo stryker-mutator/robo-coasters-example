@@ -1,11 +1,11 @@
 {
-  "name": "robocoasters",
+  "name": "robo-coasters-example",
   "version": "1.0.0",
   "type": "module",
   "description": "An example for Mutation Testing",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stryker-mutator/robocoasters-example"
+    "url": "https://github.com/stryker-mutator/robo-coasters-example"
   },
   "main": "index.js",
   "scripts": {
