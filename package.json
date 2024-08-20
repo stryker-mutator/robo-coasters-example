@@ -21,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@stryker-mutator/jest-runner": "^8.2.2",
+    "@stryker-mutator/jest-runner": "^8.5.0",
     "@types/jest": "^29.5.11",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
