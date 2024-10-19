@@ -11,7 +11,7 @@ template.innerHTML = `
     <div id="view"><robo-choose-ride></robo-choose-ride></div>
     <div class="alert alert-default" role="alert">
         <h4 class="alert-heading">Prrt!</h4>
-        Curious about the <a target="_blank" href="reports/coverage/lcov-report/index.html">code coverage report</a> or the <a target="_blank" href="reports/mutation/mutation.html">mutation testing report</a>? 
+        Curious about the <a target="_blank" href="reports/coverage/lcov-report/index.html">code coverage report</a> or the <a target="_blank" href="https://dashboard.stryker-mutator.io/reports/github.com/stryker-mutator/robo-coasters-example/master">mutation testing report</a>? 
     </div>
 </div>
 `;
