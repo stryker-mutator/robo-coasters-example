@@ -12,7 +12,7 @@
     "all": "npm run lint && npm test && npm run test:mutation",
     "lint": "npm run lint:ts && npm run lint:format",
     "lint:ts": "tsc -b jsconfig.json",
-    "lint:format": "prettier --check --ignore-path .gitignore .",
+    "lint:format": "prettier --write --check --ignore-path .gitignore .",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:mutation": "stryker run",
     "start": "lite-server"

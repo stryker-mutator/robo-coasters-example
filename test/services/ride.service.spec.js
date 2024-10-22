@@ -19,7 +19,7 @@ describe(RideService.name, () => {
     const actual = await sut.getRides();
     expect(actual).toStrictEqual(expectedRides);
   });
-  
+
   it('should retrieve a specific ride from the server when getRide is called', async () => {
     const expectedRide = createRide({ id: 'big-coaster' });
     const rides = [expectedRide, createRide({ id: 'small-coaster' })];
