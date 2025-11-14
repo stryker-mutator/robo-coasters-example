@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["robo", "robocoasters"]
+  "cSpell.words": [
+    "robo",
+    "robocoasters"
+  ],
+  "strykerMutator.enable": true
 }
